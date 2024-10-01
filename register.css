@@ -1,3 +1,7 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 body {
     min-height: 100vh;
 }
@@ -11,12 +15,5 @@ body {
     max-width: 80%;
 }
 .form-container {
-    width: 500px; /* Set form width to 500px */
-}
-.btn-dark-blue {
-    background-color: #003366;
-    color: white;
-}
-.btn-dark-blue:hover {
-    background-color: #002244;
+    max-width: 500px;
 }
