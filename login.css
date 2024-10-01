@@ -1,0 +1,22 @@
+body {
+    min-height: 100vh;
+}
+.form-section, .logo-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-section img {
+    max-width: 80%;
+}
+.form-container {
+    width: 500px; /* Set form width to 500px */
+}
+.btn-dark-blue {
+    background-color: #003366;
+    color: white;
+}
+.btn-dark-blue:hover {
+    background-color: #002244;
+}
