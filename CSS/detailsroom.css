@@ -1,0 +1,104 @@
+
+.container {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: 35px;
+}
+
+.col-md-6 {
+    padding-top: 40px;
+}
+
+h3 {
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+
+h5 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: larger;
+}
+
+.room-detail {
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-right: 30px;
+}
+
+.amenity {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.room-detail span {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+#book-btn {
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(6, 6, 116);
+    font-weight: bold;
+}
+
+/* Fix image size issue */
+#room-image img {
+    max-width: 100%;
+    height: auto; 
+}
+
+/* Media query for small devices */
+@media (max-width: 900px) {
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0;
+    }
+
+    .col-md-6 {
+        padding-top: 20px;
+    }
+
+    #room-info {
+        font-size: 14px;
+    }
+
+    .amenity {
+        margin-right: 30px; 
+    }
+
+    #book-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Media query cho màn hình rất nhỏ (như điện thoại) */
+@media (max-width: 320px) {
+    .col- {
+        padding-top: 10px;
+    }
+
+    #room-details h3 {
+        font-size: 20px; /* Giảm kích thước chữ cho màn hình nhỏ */
+    }
+
+    #room-info, #room-amenities {
+        font-size: 10px; /* Giảm kích thước chữ của thông tin và tiện nghi phòng */
+    }
+
+    .amenity {
+        margin-right: 15px; /* Giảm khoảng cách cho phù hợp với màn hình nhỏ */
+    }
+
+    #book-btn {
+        margin-top: 5px;
+        font-size: 10px; /* Giảm kích thước chữ trên nút */
+        width: 100%; /* Nút sẽ chiếm hết chiều rộng của cột trên màn hình nhỏ */
+    }
+}
