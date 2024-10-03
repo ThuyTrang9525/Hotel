@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Hotel/CSS/payment.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+    <div class="menu"></div>
+    <p class=" textTemplate title">Đặt phòng khách sạn</p>
+    <div class="framPay">
+        <form action="" id="payForm">
+            <p class="textTemplate title-non">Thông tin của bạn</p>
+            <div class="box">
+                <div class="flex-box ex-in">
+                    <div class="flex-flex-non-box">
+                        <p class="textTemplate paraName">Tên:</p>
+                        <input type="text" class="inputInfo" id="nameCus">
+                    </div>
+                    <div class="flex-flex-non-box">
+                        <p class="textTemplate paraName">SĐT:</p>
+                        <input type="text" class="inputInfo" id="phoneCus">
+                    </div>
+                </div>
+                <div class="flex-box">
+                    <div class="flex-flex-non-box">
+                        <p class="textTemplate paraName">Địa chỉ:</p>
+                        <input type="text" class="inputInfo" id="addressCus">
+                    </div>
+                </div>
+            </div>
+            <p class=" textTemplate title-non">Thông tin đặt phòng</p>
+            <div class="box">
+                <div class="flex-box">
+                    <p class="paraName distance4">Tên phòng:</p>
+                    <p class="paraResultBook weight" id="nameRoom">Connecting With Balcony Room</p>
+                </div>
+                <div class="flex-box">
+                    <p class="paraName distance4" >Giờ nhận phòng:</p>
+                    <p class="paraResultBook weight" id="dateGiveRoom">17:00, 09 tháng 4 năm 2023</p>
+                </div>
+                <div class="flex-box">
+                    <p class="paraName distance4">Giờ trả phòng:</p>
+                    <p class="paraResultBook weight" id="datePayRoom">12:00, 10 tháng 4 năm 2023</p>
+                </div>
+                <div class="flex-box">
+                    <p class="paraName distance4">Số khách ở:</p>
+                    <p class="paraResultBook weight" id="numberCusOfRoom">4 khách</p>
+                </div>
+            </div>
+            <p class="textTemplate title-non">Dịch vụ khách sạn</p>
+            <div class="boxService" id="boxService">
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se1" id="se1" value="15000">
+                    <p> Bánh mì que</p>
+                    <p class="paraResultServicePrice"> 15000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se2" id="se2" value="15000">
+                    <p> Bánh bao</p>
+                    <p class="paraResultServicePrice"> 15000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se3" id="se3" value="30000">
+                    <p> Súp cua</p>
+                    <p class="paraResultServicePrice">30000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se4" id="se4" value="50000">
+                    <p>Cháo thịt</p>
+                    <p class="paraResultServicePrice">50000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se5" id="se5" value="60000">
+                    <p>Mì sào bò</p>
+                    <p class="paraResultServicePrice">60000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se6" id="se6" value="45000">
+                    <p> Bánh mì que</p>
+                    <p class="paraResultServicePrice">45000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se7" id="se7" value="35000">
+                    <p> Salad trọn</p>
+                    <p class="paraResultServicePrice"> 35000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se8" id="se8" value="20000">
+                    <p>Bia</p>
+                    <p class="paraResultServicePrice"> 20000</p>
+                </div>
+                <div class="boxServiceNon">
+                    <input type="checkbox" name="se9" id="se9" value="15000">
+                    <p>Nước ngọt</p>
+                    <p class="paraResultServicePrice"> 15000</p>
+                </div>
+            </div>
+            <div class="boxService" id="boxService2">
+                <div class="boxServiceNon distance3">
+                    <input type="radio" name="tran1" id="tran1" value="30000">
+                    <p>Đưa đón sân bay bằng xe máy</p>
+                    <p class="paraResultServicePrice"> 30000</p>
+                </div>
+                <div class="boxServiceNon distance3">
+                    <input type="radio" name="tran1" id="tran2" value="150000">
+                    <p>Đưa đón sân bay bằng ô tô</p>
+                    <p class="paraResultServicePrice"> 150000</p>
+                </div>
+                <br>
+            </div>
+            <p class="textTemplate title-non">Thanh toán</p>
+            <div class="thanhToan">
+                <div id="thanhToan">
+                    <div class="boxServiceNon distance2">
+                        <p>Connecting With Balcony Room</p>
+                        <p class="paraResultServicePrice"> 15000</p>
+                    </div>
+                    <div class="boxServiceNon distance2">
+                        <p>Đưa đón sân bay bằng ô tô</p>
+                        <p class="paraResultServicePrice"> 15000</p>
+                    </div>
+                </div>
+                <div class="boxServiceNon distance2">
+                    <p class="weight">Tổng thanh toán:</p>
+                    <p class="paraResultServicePrice weight" id="totalPay"> 15000</p>
+                </div>
+            </div>
+            <p class="textTemplate title-non">Trả bằng</p>
+            <div class="box2 flex-box">
+                <label class="boxServiceNon">
+                    <input type="radio" name="pay" id="pay1">
+                    <span class="custom-radio">Tiền mặt</span>
+                </label>
+                <label class="boxServiceNon distance3">
+                    <input type="radio" name="pay" id="pay2">
+                    <span class="custom-radio">Thanh toán bằng Ngân hàng</span>
+                </label>
+            </div>
+            <div class="boxButton">
+                <button class="textTemplate">Đặt phòng</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
