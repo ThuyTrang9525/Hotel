@@ -60,3 +60,21 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     alert("Đăng ký thành công!");
 });
+
+// Hàm để chuyển hướng đến trang đăng nhập
+function redirectToLogin() {
+    window.location.href = '/HTML/login.html'; // Đường dẫn đến trang đăng nhập của bạn
+}
+
+// Thêm sự kiện submit cho form
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm'); // Lấy form theo id
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn không cho form gửi mặc định
+
+        // Ở đây bạn có thể thực hiện các xử lý để đăng ký tài khoản (kiểm tra, gửi dữ liệu đến server, v.v.)
+        // Nếu đăng ký thành công, thực hiện chuyển hướng
+        redirectToLogin();
+    });
+});
