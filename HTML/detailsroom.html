@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="detailsroom.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Room Image -->
+            <div id="room-image" class="col-xs-12 col-sm-6 col-md-6">
+                <img src="https://placehold.co/600x350/EEE/31343C" class="img-responsive" alt="Room Image">
+            </div>
+            <div id="room-details" class="col-xs-12 col-sm-6 col-md-6">
+                <h3>Loại Phòng</h3>
+                <ul class="list-unstyled" id="room-info">
+                    <li><h5>Thông tin phòng:</h5></li>
+                    <li class="room-detail"><span class="fa fa-group" style="font-size:14px"></span>Số người</li>
+                    <li class="room-detail"><span class="glyphicon glyphicon-bed"></span>Loại giường</li>
+                </ul>
+
+                <ul class="list-unstyled" id="room-amenities">
+                    <li><h5>Tiện nghi phòng:</h5></li>
+                    <li class="amenity">Wi-Fi miễn phí</li>
+                    <li class="amenity">Máy lạnh</li>
+                    <li class="amenity">Tivi</li>
+                    <li class="amenity">Tủ lạnh</li>
+                    <li class="amenity">Bộ vệ sinh cá nhân</li>
+                    <li class="amenity">Nước đóng chai miễn phí</li>
+                </ul>
+
+                <h5>Giá phòng</h5>
+                <p id="room-price" class="text-danger">0VND</p>
+                <button id="book-btn" class="btn btn-primary">Đặt phòng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
