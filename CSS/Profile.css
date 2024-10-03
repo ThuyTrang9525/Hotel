@@ -1,0 +1,100 @@
+body {
+    font-family: sans-serif;
+}
+
+.profile-form {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 17%;
+    top: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-items: center;
+    width: 1000px;
+}
+
+p {
+    margin-top: 0;
+}
+
+.form-container {
+    width: 900PX;
+    margin-left: 70px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.form-group  {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 600px;
+    position: relative;
+}
+
+label {
+    display: flex;
+    text-align: left;
+    width: 40%;
+    margin-left: 0;
+}
+
+.group-input input {
+    width: 350px;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 18px;
+    
+}
+
+.group-input a {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.gender {
+    display: flex;
+    align-items: left;
+}
+
+.item-gender input {
+    zoom: 1.4;
+    accent-color: blue;
+}
+
+select {
+    margin-right: 10px;
+    width: 130px;
+    height: 30px;
+    font-size: 18px;
+}
+
+button {
+    font-size: 20px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    background-color: navy;
+}
+
+.edit {
+    position: relative;
+    left: 390px;
+}
+
+.log-out {
+    position: relative;
+    top: 190px;
+    left: 46%;
+}
+
+#day {
+    margin-left: 40px;
+}
+
