@@ -85,13 +85,14 @@ button {
 
 .edit {
     position: relative;
-    left: 390px;
+    left: 380px;
+    top: 20px;
 }
 
 .log-out {
     position: relative;
-    top: 190px;
-    left: 46%;
+    top: 90px;
+    left: 43%;
 }
 
 #day {
