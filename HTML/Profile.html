@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Hotel/CSS/Profile.css">
+    <link rel="stylesheet" href="/CSS/Profile.css">
 </head>
 <body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/HTML/home.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Profile</li>
+        </ol>
+    </nav>
     <div class = "profile-form">
         <h2>Hồ Sơ Của Tôi</h2>
         <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
@@ -75,8 +81,9 @@
             <div class="edit">
                 <button type="submit">Chỉnh sửa</button>
             </div>
+            <button class="log-out" onclick="logout()">Đăng xuất</button>
         </form>
     </div>
-    <button class="log-out" onclick="logout()">Đăng xuất</button>
+    
 </body>
 </html>

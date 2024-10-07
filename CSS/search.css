@@ -1,0 +1,132 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+    padding: 0;
+    margin: 0.1px;
+}
+body p{
+    margin: 10px 0;
+    display: flex;
+}
+.textTemplate{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 27px;
+}
+.textA{
+    font-size: 24px;
+}
+.textColor{
+    color: red;
+}
+.text1{
+    font-size: 21px;
+}
+.text2{
+    font-size: 18px;
+}
+.text3{
+    font-size: 15px;
+}
+.framSearch{
+    width: 1360px;
+    background-color: rgb(236, 236, 236);
+}
+.container{
+    width: 100%;
+    display: flex;
+    background-color:inherit;
+}
+.box1{
+    padding: 10px 20px;
+    background-color: rgb(236, 236, 236);
+   /* border: 1px solid black;*/
+}
+.box2{
+    background-color: inherit;
+    flex:1 ;
+}
+.boxFlex{
+    display: flex;
+}
+.boxfilter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#box-search{
+    border-bottom: 1px solid black
+}
+.boxFilterPrice{
+    display: flex;
+    justify-content: space-around;
+}
+.boxPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+#box-filter > p{
+    margin: 0;
+}
+.boxPrice input{
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+.boxPrice p{
+    margin-bottom: 10px;
+}
+.boxPrice input{
+    border: none;
+    border-radius: 5px;
+}
+.boxButton{
+    width: 100%;
+    background-color: rgb(23, 99, 99);
+    margin: 15px 0;
+    margin-top: 30px;
+}
+.boxButton button{
+    float: right;
+}
+.seButton{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: 19px;
+}
+.distanceB{
+    width: 300px;
+}
+.boxResult{
+    margin-bottom: 20PX;
+}
+.boxRoom{
+    display: flex;
+    margin-left: 25px;
+}
+.image{
+    width: 35%;
+    height: 150px;
+    background-color: aqua;
+}
+.boxRoomNon{
+    flex: 1;
+    display: flex;
+}
+.boxRoomFlexNon{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.boxRoomFlexNon div{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

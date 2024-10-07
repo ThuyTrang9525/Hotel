@@ -5,6 +5,9 @@
 body {
     min-height: 100vh;
 }
+.form-section{
+    background-color: #98d5ef;
+}
 .form-section, .logo-section {
     min-height: 100vh;
     display: flex;
@@ -16,4 +19,24 @@ body {
 }
 .form-container {
     max-width: 500px;
+}
+.btn:hover {
+    background-color: #00509e; /* Màu nền khi hover */
+}
+
+.btn:active {
+    background-color: #6fdff3; /* Màu nền khi nhấn vào */
+}
+.breadcrumb {
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
 }
