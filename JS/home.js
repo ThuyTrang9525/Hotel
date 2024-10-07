@@ -1,3 +1,4 @@
+//Js cho phần chuyển slide
 let next = document.querySelector('.next')
 let prev = document.querySelector('.prev')
 console.log(typeof(next));
@@ -8,12 +9,8 @@ next.addEventListener('click', function(){
 
 prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+    document.querySelector('.slide').prepend(items[items.length - 1]) 
 })
-
-function getDetail(id){
-    
-}
 
 function getQueryParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,3 +19,18 @@ function getQueryParameter(name) {
 
 const productId = getQueryParameter('id');
 console.log(productId);
+//Js cho phần model
+var modal = document.getElementById("bookingModal");
+        var btn = document.getElementById("book-room");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
