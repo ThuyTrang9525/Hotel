@@ -1,5 +1,19 @@
 body {
     font-family: sans-serif;
+    background: #eaeaea;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0; 
 }
 
 .profile-form {
@@ -14,6 +28,7 @@ body {
     box-sizing: border-box;
     justify-items: center;
     width: 1000px;
+    background-color: #CAE5E8;
 }
 
 p {
@@ -50,6 +65,7 @@ label {
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 18px;
+    padding: 5px;
     
 }
 
@@ -85,7 +101,7 @@ button {
 
 .edit {
     position: relative;
-    left: 380px;
+    left: 300px;
     top: 20px;
 }
 
