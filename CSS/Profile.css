@@ -85,16 +85,51 @@ button {
 
 .edit {
     position: relative;
-    left: 390px;
+    left: 380px;
+    top: 20px;
 }
 
 .log-out {
     position: relative;
-    top: 190px;
-    left: 46%;
+    top: 90px;
+    left: 43%;
 }
 
 #day {
     margin-left: 40px;
+}
+
+.btn:hover {
+    background-color: #00509e; /* Màu nền khi hover */
+}
+
+.btn:active {
+    background-color: #6fdff3; /* Màu nền khi nhấn vào */
+}
+.breadcrumb {
+    list-style: none; /* Xóa kiểu đánh số */
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " / "; /* Dấu phân cách giữa các mục breadcrumb */
+    color: #6c757d; /* Màu của dấu phân cách */
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Màu khi hover vào breadcrumb */
 }
 

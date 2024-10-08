@@ -1,0 +1,255 @@
+{
+    "rooms": [
+      {
+        "id": 1,
+        "type": "Deluxe Room",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Tủ lạnh",
+          "Bộ vệ sinh cá nhân",
+          "Nước đóng chai miễn phí"
+        ],
+        "price": "1200000 VND"
+      },
+      {
+        "id": 2,
+        "type": "Standard Room",
+        "occupancy": "2 người",
+        "bed_type": "Queen-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi"
+        ],
+        "price": "800000 VND"
+      },
+      {
+        "id": 3,
+        "type": "Suite Room",
+        "occupancy": "4 người",
+        "bed_type": "2 King-size beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Tủ lạnh",
+          "Bộ vệ sinh cá nhân",
+          "Bồn tắm"
+        ],
+        "price": "2000000 VND"
+      },
+      {
+        "id": 4,
+        "type": "Family Room",
+        "occupancy": "4 người",
+        "bed_type": "2 Queen-size beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tivi",
+          "Máy lạnh",
+          "Tủ lạnh"
+        ],
+        "price": "1500000 VND"
+      },
+      {
+        "id": 5,
+        "type": "Single Room",
+        "occupancy": "1 người",
+        "bed_type": "Single bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tivi"
+        ],
+        "price": "500000 VND"
+      },
+      {
+        "id": 6,
+        "type": "Superior Room",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tủ lạnh"
+        ],
+        "price": "1000000 VND"
+      },
+      {
+        "id": 7,
+        "type": "Junior Suite",
+        "occupancy": "3 người",
+        "bed_type": "1 King-size bed, 1 Single bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Bồn tắm"
+        ],
+        "price": "1800000 VND"
+      },
+      {
+        "id": 8,
+        "type": "Executive Suite",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tivi",
+          "Máy lạnh",
+          "Bồn tắm"
+        ],
+        "price": "2200000 VND"
+      },
+      {
+        "id": 9,
+        "type": "Luxury Room",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tivi",
+          "Máy lạnh",
+          "Tủ lạnh",
+          "Bồn tắm"
+        ],
+        "price": "2500000 VND"
+      },
+      {
+        "id": 10,
+        "type": "Economy Room",
+        "occupancy": "2 người",
+        "bed_type": "Queen-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí"
+        ],
+        "price": "600000 VND"
+      },
+      {
+        "id": 11,
+        "type": "Single Deluxe Room",
+        "occupancy": "1 người",
+        "bed_type": "Queen-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tủ lạnh"
+        ],
+        "price": "700000 VND"
+      },
+      {
+        "id": 12,
+        "type": "Business Room",
+        "occupancy": "1 người",
+        "bed_type": "Single bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi"
+        ],
+        "price": "950000 VND"
+      },
+      {
+        "id": 13,
+        "type": "Twin Room",
+        "occupancy": "2 người",
+        "bed_type": "2 Single beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi"
+        ],
+        "price": "850000 VND"
+      },
+      {
+        "id": 14,
+        "type": "Penthouse Suite",
+        "occupancy": "5 người",
+        "bed_type": "3 King-size beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tủ lạnh",
+          "Bồn tắm"
+        ],
+        "price": "3500000 VND"
+      },
+      {
+        "id": 15,
+        "type": "Standard Twin Room",
+        "occupancy": "2 người",
+        "bed_type": "2 Single beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tivi",
+          "Máy lạnh"
+        ],
+        "price": "780000 VND"
+      },
+      {
+        "id": 16,
+        "type": "Deluxe Family Room",
+        "occupancy": "4 người",
+        "bed_type": "2 Queen-size beds",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Tủ lạnh"
+        ],
+        "price": "1600000 VND"
+      },
+      {
+        "id": 17,
+        "type": "Presidential Suite",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Bồn tắm"
+        ],
+        "price": "5000000 VND"
+      },
+      {
+        "id": 18,
+        "type": "Economy Single Room",
+        "occupancy": "1 người",
+        "bed_type": "Single bed",
+        "amenities": [
+          "Wi-Fi miễn phí"
+        ],
+        "price": "400000 VND"
+      },
+      {
+        "id": 19,
+        "type": "Luxury Suite",
+        "occupancy": "2 người",
+        "bed_type": "King-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Tủ lạnh",
+          "Bồn tắm"
+        ],
+        "price": "2800000 VND"
+      },
+      {
+        "id": 20,
+        "type": "Studio Apartment",
+        "occupancy": "2 người",
+        "bed_type": "Queen-size bed",
+        "amenities": [
+          "Wi-Fi miễn phí",
+          "Máy lạnh",
+          "Tivi",
+          "Bếp nhỏ"
+        ],
+        "price": "2000000 VND"
+      }
+    ]
+  }
+  
