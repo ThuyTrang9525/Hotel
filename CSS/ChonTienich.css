@@ -33,12 +33,15 @@ header {
 .breadcrumb-item a:hover {
     text-decoration: underline;
 }
+.card{
+    margin-top: 10px
+}
 .card img{
     width: 250px;
     height: 400px;
 }
 footer{
-    margin-top: 200px;
+    margin-top: 100px;
   }
   ul.list-unstyled {
     padding-left: 0;
