@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
 }
 .form-section{
-    background-color: #6dbadc;
+    background-color: #74cbf0;
 }
 .form-section, .logo-section {
     min-height: 100vh;
@@ -21,7 +21,7 @@ body {
     max-width: 500px;
 }
 .btn:hover {
-    background-color: #00509e; /* Màu nền khi hover */
+    background-color: #73aee9; /* Màu nền khi hover */
 }
 
 .btn:active {
