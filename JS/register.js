@@ -60,8 +60,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     alert("Đăng ký thành công!");
 });
-<<<<<<< HEAD
-=======
 
 // Hàm để chuyển hướng đến trang đăng nhập
 function redirectToLogin() {
@@ -80,4 +78,4 @@ document.addEventListener('DOMContentLoaded', function() {
         redirectToLogin();
     });
 });
->>>>>>> fbb59719320d11928b931ba8f43f5a7d6557288e
+
