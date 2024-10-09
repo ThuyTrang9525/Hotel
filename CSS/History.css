@@ -47,9 +47,22 @@ html {
 .breadcrumb-item a:hover {
   text-decoration: underline;
 }
-footer{
-  margin-top: 400px;
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Đảm bảo nội dung chiếm đủ chiều cao trang */
 }
+
+.content {
+  flex-grow: 1; /* Tạo không gian cho phần nội dung mở rộng */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
 ul.list-unstyled {
   padding-left: 0;
 }
