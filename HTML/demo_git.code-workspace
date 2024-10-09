@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "../../../demo_git"
+		},
+		{
+			"path": "../../../KIEMTRA"
+		},
+		{
+			"path": "../../../HTML_Thầy Đình/HTML"
+		},
+		{
+			"path": "../../../GitGroup"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../myGit"
+		},
+		{
+			"path": "../../../KT_JS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JavaScript"
+	},
+	"extensions": {
+		"recommendations": [
+			"xabikos.javascriptsnippets"
+		]
+	}
+}
