@@ -33,7 +33,7 @@ body p{
     width: 1360px;
     background-color: rgb(236, 236, 236);
 }
-.container{
+.containerSearch{
     width: 100%;
     display: flex;
     background-color:inherit;
