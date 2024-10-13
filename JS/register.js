@@ -61,6 +61,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     alert("Đăng ký thành công!");
 });
 
+
 // Hàm để chuyển hướng đến trang đăng nhập
 function redirectToLogin() {
     window.location.href = '/HTML/login.html'; // Đường dẫn đến trang đăng nhập của bạn
@@ -78,3 +79,4 @@ document.addEventListener('DOMContentLoaded', function() {
         redirectToLogin();
     });
 });
+
