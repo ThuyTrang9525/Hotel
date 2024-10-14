@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Thêm các năm (giả sử từ 1900 đến năm hiện tại)
     const currentYear = new Date().getFullYear();
-    for (let i = 1900; i <= currentYear; i++) {
+    for (let i = 1950; i <= currentYear; i++) {
         const option = document.createElement('option');
         option.value = i;
         option.textContent = i;
