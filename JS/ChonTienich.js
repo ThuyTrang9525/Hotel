@@ -1,7 +1,7 @@
-
+// Tìm kiếm và hiển thị tiện ích đã chọn khi nhấn tìm kiếm
     document.addEventListener("DOMContentLoaded", function() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const searchButton = document.querySelector('.btn-dark');
+        const searchButton = document.querySelector('.btn-search');
         
         function filterAmenities() {
        
@@ -35,3 +35,4 @@
 
         searchButton.addEventListener('click', filterAmenities);
     });
+
