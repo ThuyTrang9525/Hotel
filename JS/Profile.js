@@ -27,5 +27,4 @@ document.addEventListener('DOMContentLoaded', function() {
         option.textContent = i;
         yearSelect.appendChild(option);
     }
-}
-);
+});
