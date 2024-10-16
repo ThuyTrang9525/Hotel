@@ -127,6 +127,7 @@ function findUser(id){
 }
 //Xac nhận filter trước khi hiện nội dung
 var beFilter=getQueryParam('type');
+console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
 var user = findUser("u01");
 console.log(user)
@@ -146,7 +147,7 @@ document.getElementById('bookNumDateHotel').innerHTML=numDay;
 //
 
 //Hiện kết quả tìm kiếm
-document.addEventListener('DOMContentLoaded',showResultRooms())
+document.addEventListener('DOMContentLoaded',showResultRooms)
 //SỰ KIỆN KHI LỌC KẾT QUẢ
 const buttonFillter =document.getElementById('buttonFillter');
 buttonFillter.addEventListener('click', function(){
@@ -288,22 +289,30 @@ function findRoomAcodingPriceRoom(list){
 
 //(2)Hàm tìm các phòng theo loại(Đã hoàn thành)
 function findRoomAcodingTypeRoom(list){
-    if(beFilter=="1"){
-        statusTypeRoom1.checked =true;
-        beFilter="";
-    }else if (beFilter=="2"){
-        statusTypeRoom2.checked= true;
-        beFilter="";
-    }else if( beFilter=="3"){
-        statusTypeRoom3.checked = true;
-        beFilter="";
-    }
     let type="";
     const statusTypeRoom1=document.getElementById('statusTypeRoom1');
     const statusTypeRoom2=document.getElementById('statusTypeRoom2');
     const statusTypeRoom3=document.getElementById('statusTypeRoom3');
+    if(beFilter=="1"){
+        boxFilterTypeRoom.style.display = "block"
+        typeRoom.style.backgroundColor= "rgb(143, 143, 143)"
+        statusTypeRoom1.checked = true;
+        console.log(statusTypeRoom1.checked)
+        beFilter="";
+    }else if (beFilter=="2"){
+        boxFilterTypeRoom.style.display = "block"
+        typeRoom.style.backgroundColor= "rgb(143, 143, 143)"
+        statusTypeRoom2.checked= true;
+        beFilter="";
+    }else if( beFilter=="3"){
+        boxFilterTypeRoom.style.display = "block"
+        typeRoom.style.backgroundColor= "rgb(143, 143, 143)"
+        statusTypeRoom3.checked = true;
+        beFilter="";
+    }
     if(statusTypeRoom1.checked){
         type=statusTypeRoom1.value;
+        console.log(type)
     }else if(statusTypeRoom2.checked){
         type=statusTypeRoom2.value;
     }else if (statusTypeRoom3.checked){
@@ -311,6 +320,7 @@ function findRoomAcodingTypeRoom(list){
     }else{
         return list;
     }
+    console.log(list)
     return findRoomAtType(list,type)
 }
 //(3)Sắp xếp(chưa hoàn thành)
@@ -362,6 +372,8 @@ function findRoomFromAtoB(list,min,max){
 }
 //(2)Hàm tìm phòng với loại
 function findRoomAtType(list,type){
+    console.log(type=="Tổng thống")
+    console.log(list)
     let listRoom=list.filter(room => room.type === type)
     if (listRoom){
         return listRoom;
