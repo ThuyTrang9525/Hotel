@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.header{
+header {
   position: sticky;
   top: 0;
   width: 100%;
@@ -12,11 +12,11 @@
   background-color: rgba(255, 255, 255, 0.7); 
   backdrop-filter: blur(10px); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0;
+  margin-bottom: 0; 
 }
-
-html, body {
+html, body{
   background: #eaeaea;
+  overflow-x: hidden;
   height: 100%;
 }
 
