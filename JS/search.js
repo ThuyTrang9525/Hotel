@@ -115,6 +115,7 @@ function getQueryParam(param){
     var urlParam = new URLSearchParams(window.location.search);
     return urlParam.get(param);
 }
+//
 var rooms=getRoomsFromLocalStorage();
 //Hàm tìm user với thuộc tính id từ URL
 function findUser(id){

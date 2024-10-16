@@ -4,7 +4,7 @@ let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'nguyenthong0855@gmail.com',
-        pass: 'thong085537'
+        pass: 'mk'
     },
 });
 //Thiết lập tùy chọn email. TK người gửi, tK người nhận, tiêu dề, nội dung
