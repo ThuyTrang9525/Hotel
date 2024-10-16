@@ -9,16 +9,16 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(243, 240, 240, 0.7); 
+    background-color:  rgba(255, 255, 255, 0.7); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
 }
 header a{
-    color:  rgb(74, 72, 72);
+    color:  #0d6af6;
 }
 header a:hover{
-    color: rgb(21, 21, 229);
+    color: rgb(105, 123, 243);
     transform: scale(1.05);
 }
 html, body {
@@ -35,7 +35,7 @@ html, body {
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #333333;
+    color: #0d6af6;
 }
 
 .breadcrumb-item a:hover {
@@ -77,27 +77,27 @@ button{
     background-color: rgb(236, 231, 231);
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Ẩn overlay ban đầu */
+    z-index: 1;
+}
+
 #bookingForm {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Style cho nền tối khi hiện form */
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn form ban đầu */
+    z-index: 2;
 }
 
 ul.list-unstyled {
