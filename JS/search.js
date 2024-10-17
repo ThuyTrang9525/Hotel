@@ -64,30 +64,34 @@ var users =[
     history:[],
     }
 ];
-/* var rooms = [
+ /*var rooms = [
 {
     id:"r1",
     name:"phòng 1",
     price:300000,
-    type: "Thường"
+    type: "Thường",
+    time:["2024-10-15"]
 },
 {
     id:"r2",
     name:"phòng 2",
     price:700000,
-    type: "Thương gia"
+    type: "Thương gia",
+    time:[],
 },
 {
     id:"r3",
     name:"phòng 3",
     price:1000000,
-    type: "Tổng thống"
+    type: "Tổng thống",
+    time:[],
 },
 {
     id:"r4",
     name:"phòng 4",
     price:600000,
-    type: "Thương gia"
+    type: "Thương gia",
+    time:[],
 },
 ]; */
 //Hàm lấy lấy user chưa chỉnh sửa
@@ -165,6 +169,7 @@ function changeTime(date){
 function showResultRooms(){
     //sắp xếp các pần tử trong danh sách
     let listRoom=rooms;
+    listRoom=findRoomByDate(listRoom);
     listRoom=findRoomAcodingPriceRoom(listRoom);
     listRoom=findRoomAcodingTypeRoom(listRoom);
     listRoom=sortRoom(listRoom);
@@ -216,7 +221,13 @@ function showRoomInBasket(){
 }
 //hàm xóa một phần tử ở giỏ hàng
 function buttonDeleteRoom(id){
-    user.book = user.book.filter(bo => bo.idRoom != id); 
+    user.book = user.book.filter(bo => bo.idRoom != id);
+    users.forEach(peo =>{
+        if(peo.id==user.id){
+            peo=user;
+        }
+    }) 
+    localStorage.setItem('users', JSON.stringify(users));
     showResultRooms()
 }
 //Hàm hiện tổng tiền các đơn hàng ở giỏ hàng
@@ -267,6 +278,12 @@ function addEvetChoseButton(){
             chose.innerHTML="Chọn"
             chose.dataset.type="true";
         }
+        users.forEach(peo =>{
+            if(peo.id==user.id){
+                peo=user;
+            }
+        })
+        localStorage.setItem('users', JSON.stringify(users));
         showRoomInBasket(); 
     })
 })
@@ -380,5 +397,45 @@ function findRoomAtType(list,type){
         return listRoom;
     }else {
         return [];
+    }
+}
+//(3)Hàm tìm phòng mà có ngày khác
+function findRoomByDate(list){
+    if(!rooms[0].time){
+        alert("Không có thuộc tính time")
+    }
+    const bien=sortDate(tachThoiGian(startDay1,endDay1))
+    console.log(bien)
+    let listafter =list.filter(room => !room.time.some(time => bien.includes(time)))
+    console.log("list", listafter)
+    return listafter
+}
+//chia thời gian thành mảng
+function tachThoiGian(a,b){
+    let listTime=[];
+    let time1= new Date(a);
+    let time2 = new Date(b);
+    var timeAf=""
+    const date = Math.ceil((time2 - time1) / (1000 * 60 * 60 * 24));
+    for(let i=0;i<=(date);i++){
+        timeAf=time1.toISOString().split('T')[0];
+        listTime.push(timeAf);
+        time1.setDate(time1.getDate() +1 );
+    }
+    return listTime
+}
+
+//Hàm xắp xếp ngày từ bé đến lớn
+function sortDate(list){
+    return list.sort((a, b) => new Date(a) - new Date(b));
+}
+//Hàm chuyển phòng
+function changeToPay(){
+    if(user.book.length>0){
+        const beHaft ="HTML/payment.html?userId="+user.id;
+        const url = new URL (beHaft,window.location.origin);
+        window.location.href=url.toString();
+    }else{
+        alert("Phải chọn ít nhất một phòng");
     }
 }

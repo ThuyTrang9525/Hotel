@@ -127,7 +127,8 @@ function saveOrUpdateRoom(name,type, price, bedType, area, view, amenities, imag
             view,
             amenities,
             image,
-            isBooked: false
+            isBooked: false,
+            time:[],
         };
         console.log(newRoom);
         rooms.push(newRoom);
