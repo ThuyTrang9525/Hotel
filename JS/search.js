@@ -401,6 +401,9 @@ function findRoomAtType(list,type){
 }
 //(3)Hàm tìm phòng mà có ngày khác
 function findRoomByDate(list){
+    if(!rooms[0].time){
+        alert("Không có thuộc tính time")
+    }
     const bien=sortDate(tachThoiGian(startDay1,endDay1))
     console.log(bien)
     let listafter =list.filter(room => !room.time.some(time => bien.includes(time)))
