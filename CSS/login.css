@@ -1,7 +1,3 @@
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 body {
     min-height: 100vh;
 }
@@ -40,15 +36,29 @@ body {
 
 
 header {
-    position: sticky;
+    position: sticky; /* Giữ header ở trên cùng khi cuộn */
     top: 0;
     width: 100%;
     z-index: 1000; 
     background-color: rgba(243, 240, 240, 0.7); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0;
+    margin-bottom: 20px; /* Thêm margin dưới header */
 }
+
+footer {
+    margin-top: 20px; /* Thêm margin trên footer để tạo khoảng cách */
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    flex: 1; /* Container chính chiếm hết không gian còn lại */
+}
+
 header a{
     color: rgb(10, 0, 0);
 }
