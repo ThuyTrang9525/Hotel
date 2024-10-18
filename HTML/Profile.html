@@ -11,28 +11,37 @@
 </head>
 <body>
     <header class="p-3">
+        <!--Logo -->
         <div class="container-fluid d-flex justify-content-between align-items-center"> 
           <div class="d-flex align-items-center ms-0"> 
             <a href="/HTML/home.html">
               <img src="/IMAGE/Logo.png" alt="Hotel Logo" style="width: 150px;" class="me-2">
           </a>
           </div>
+
+          <!-- liên kết với thuê phòng khách sạn -->
           <div class="d-flex align-items-center">
             <div class="d-flex align-items-center me-4">
               <a href="javascript:void(0)" id="book-room" class="text-decoration-none">
                 <i class="fa-solid fa-house" style="font-size: 24px;"class="me-1"></i> 
                 Thuê phòng khách sạn</a>
             </div>
-            <a href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
+
+            <!-- Liên kết đăng nhập -->
+           <a href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="bi bi-person-circle me-2" style="font-size: 24px;"></i> 
               Đăng nhập
             </a>
+
             <a href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="fa fa-registered me-2" style="font-size:24px"></i>
               Đăng kí</a>
+
             <div class="d-flex align-items-center me-4">
               <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
               <a href="/HTML/Profile.html" class="text-decoration-none">Tài khoản</a>
+
+            <!-- Liên kết lịch sử đặt phòng -->
             </div>
             <a href="/HTML/History.html" class="d-flex align-items-center text-decoration-none">
               <i class="bi bi-calendar-check-fill me-2" style="font-size: 24px;"></i> 
@@ -43,14 +52,14 @@
     </header>
     
     <div class = "profile-form">
-        <h2>Hồ Sơ Của Tôi</h2>
+        <h4>Hồ Sơ Của Tôi</h4>
         <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
         <form class="form-container">
 
             <div class="form-group">
                 <label for="username">Tên đăng nhập</label>
                 <div class="group-input">
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="prf-username" name="prf-username" required>
                 </div>
             </div>
 
@@ -64,29 +73,29 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <div class="group-input">
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="prf-email" name="email" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
                 <div class="group-input">
-                    <input type="text" id="password" name="password" required>
+                    <input type="text" id="prf-password" name="password" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="email">Số điện thoại</label>
+                <label for="phone">Số điện thoại</label>
                 <div class="group-input">
-                    <input type="text" id="phone" name="phone" required>
+                    <input type="text" id="prf-phone" name="phone" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="gender">Giới tính</label>
                 <div class="item-gender">
-                    <input type="radio" id="male" name="gender" value="male" checked>Nam
-                    <input type="radio" id="female" name="gender" value="female" checked>Nữ
+                    <input type="radio" id="pfr-male" name="gender" value="male" checked>Nam
+                    <input type="radio" id="prf-female" name="gender" value="female" checked>Nữ
                 </div>
             </div>
 
@@ -109,9 +118,10 @@
 
             <div class="edit">
                 <button type="button" onclick="enableEdit()">Chỉnh sửa</button>
-                <button type="button" onclick="saveUserInfo()">Lưu Thông Tin</button>  
+                <button class="hidden" id="saveButton" type="button" onclick="saveUserInfo()">Lưu Thông Tin</button>  
+                <button class="log-out" onclick="logout()">Đăng xuất</button>
             </div>
-            <button class="log-out" onclick="logout()">Đăng xuất</button>
+            
         </form>
     </div>
 

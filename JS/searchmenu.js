@@ -22,7 +22,7 @@ typeRoom.addEventListener('click',function(){
 })
 var users =[
 {
-    id:"u01",
+    id:"u1",
     fullname: "user1",
     phone: "000001",
     email: "user1@.com",
@@ -36,7 +36,7 @@ var users =[
     history:[],
     },
     {
-    id:"u02",
+    id:"u2",
     fullname: "user2",
     phone: "000001",
     email: "user2@.com",
@@ -50,7 +50,7 @@ var users =[
     history:[],
     },
     {
-    id:"u03",
+    id:"u3",
     fullname: "user3",
     phone: "000001",
     email: "user3@.com",
