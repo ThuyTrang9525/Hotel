@@ -28,3 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
         yearSelect.appendChild(option);
     }
 });
+
+// Hàm khi bấm vào nút "Chỉnh sửa"
+function enableEdit() {
+    // Hiển thị nút "Lưu Thông Tin"
+    const saveButton = document.getElementById("saveButton");
+    saveButton.classList.remove("hidden");
+}
+
+  // Hàm để xử lý sự kiện lưu thông tin
+  function saveUserInfo() {
+    alert('Thông tin đã được lưu!');
+  }
