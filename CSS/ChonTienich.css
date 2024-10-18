@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -10,16 +9,25 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(243, 240, 240, 0.7); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0; 
-  }
- html, body{
+    margin-bottom: 0;
+}
+header a{
+    color: rgb(10, 0, 0);
+}
+header a:hover{
+    color: rgb(21, 21, 229);
+    transform: scale(1.05);
+}
+html, body{
     background: #eaeaea;
     overflow-x: hidden;
     height: 100%;
 }
+
+
 .breadcrumb {
     background-color: transparent;
     font-size: 16px;
@@ -27,95 +35,145 @@ header {
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #007bff;
+    color: #0d6af6;
 }
 
 .breadcrumb-item a:hover {
     text-decoration: underline;
 }
-.card{
-    margin-top: 10px
+button{
+    border-radius: 5px;
 }
-.card img{
+
+.container-ct {
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+.card {
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+.card img {
     width: 250px;
     height: 400px;
 }
-footer{
-    margin-top: 100px;
-  }
-  ul.list-unstyled {
+.card img:hover{
+    transform: scale(1.05);
+}
+
+.book-btn{
+   margin-left: 200px;
+   width: 90px;
+   height: 30px;
+}
+.book-btn a{
+    text-decoration: none;
+    color: black;
+    font-size: smaller;
+}
+.book-btn:hover{
+    transform: scale(1.05);
+    background-color: rgb(236, 231, 231);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Ẩn overlay ban đầu */
+    z-index: 1;
+}
+
+#bookingForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn form ban đầu */
+    z-index: 2;
+}
+
+ul.list-unstyled {
     padding-left: 0;
-  }
-  li a{
+}
+
+li a {
     margin-bottom: 15px;
     text-decoration: none;
     color: white;
-  }
-  ul.d-flex li:not(:last-child)::after { 
+}
+
+ul.d-flex li:not(:last-child)::after { 
     content: "|";
     margin-left: 10px;
     margin-right: 10px;
     color: white;
-  }
-  .col-md-3.col-sm-12 {
+}
+
+.col-md-3.col-sm-12 {
     position: relative; 
     text-align: center;
     height: 180px;
-  }
-  
-  .col-md-3.col-sm-12:not(:first-child) {
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.col-md-3.col-sm-12:not(:first-child) {
+    border-left: 1px solid;
     padding-left: 15px; 
-  }
-  
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     footer {
-        padding:20px;
-  }
-  
+        padding: 20px;
+    }
+
     .col-md-8.col-md-4 {
         text-align: center;
-  }
-  }
-  
-  @media (max-width: 856px) {
+    }
+}
+
+@media (max-width: 856px) {
     .d-flex {
         flex-direction: column;
         align-items: center;
     }
-  
+
     .col-md-3.col-sm-12 {
         height: auto;
         padding: 10px 0;
         text-align: center;
     }
-  
+
     .col-md-3.col-sm-12:not(:first-child) {
         border-left: none;
     }
-  
+
     ul.list-unstyled.d-flex {
-        flex-direction:row;
+        flex-direction: row;
         align-items: center;
     }
-  
+
     ul.list-unstyled.d-flex li {
         margin-bottom: 10px;
     }
-  
+
     ul.list-unstyled.d-flex li:not(:last-child)::after {
         content: "";
         margin: 0;
     }
-    
+
     .col-md-8, .col-md-4 {
         flex-direction: column;
         align-items: center;
     }
-  
+
     .col-md-8 img {
         margin-bottom: 15px;
     }
-  
-  }
-  
+}
