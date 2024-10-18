@@ -15,7 +15,6 @@ function loadRoomsFromLocalStorage() {
         rooms = JSON.parse(storedRooms);
     }
 }
-
 // Hàm render danh sách phòng ra bảng
 function renderRooms() {
     const roomData = document.getElementById('room-data');
