@@ -331,7 +331,6 @@ function findRoomAcodingTypeRoom(list){
     }
     if(statusTypeRoom1.checked){
         type=statusTypeRoom1.value;
-        console.log(type)
     }else if(statusTypeRoom2.checked){
         type=statusTypeRoom2.value;
     }else if (statusTypeRoom3.checked){
