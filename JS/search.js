@@ -20,7 +20,7 @@ typeRoom.addEventListener('click',function(){
         typeRoom.style.backgroundColor= ""
     }
 })
-var users =[
+/*var users =[
 {
     id:"u1",
     fullname: "user1",
@@ -63,7 +63,7 @@ var users =[
     book:[],
     history:[],
     }
-];
+];*/
  /*var rooms = [
 {
     id:"r1",
@@ -95,7 +95,7 @@ var users =[
 },
 ]; */
 //Hàm lấy lấy user chưa chỉnh sửa
-function getProductsFromLocalStorage(){
+function getUsersFromLocalStorage(){
     const products =JSON.parse(localStorage.getItem('users'));
     if(!products){
         return [];
@@ -134,6 +134,7 @@ function findUser(id){
 var beFilter=getQueryParam('type');
 console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
+var users= getUsersFromLocalStorage();
 var user = findUser("u1");
 console.log(user)
 // xác nhận ngày dến và ngày đi(chưa hoàn thành)

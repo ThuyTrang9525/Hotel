@@ -22,9 +22,9 @@ transporter.sendMail(mailOptions,function(error,info){
         console.log("Email đã gửi"+info.response)
     }
 })*/
-var users =[
+/*var users =[
 {
-    id:"u01",
+    id:"u1",
     fullname: "user1",
     phone: "000001",
     email: "user1@.com",
@@ -42,7 +42,7 @@ var users =[
     history:[],
     },
     {
-    id:"u02",
+    id:"u2",
     fullname: "user2",
     phone: "000001",
     email: "user2@.com",
@@ -56,7 +56,7 @@ var users =[
     history:[],
     },
     {
-    id:"u03",
+    id:"u3",
     fullname: "user3",
     phone: "000001",
     email: "user3@.com",
@@ -103,11 +103,12 @@ var rooms = [
     isbook:false,
     time:[],
 },
-];
+];*/
 //Hàm lấy phòng từ locla chưa chỉnh
-function getProductsFromLocalStorage(){
+function getRoomsFromLocalStorage(){
     const products =JSON.parse(localStorage.getItem('rooms'));
     if(!products){
+        alert("Không có các rooms")
         return [];
     }
     else{
@@ -115,15 +116,18 @@ function getProductsFromLocalStorage(){
     }
 }
 //Hàm lấy lấy user chưa chỉnh sửa
-function getProductsFromLocalStorage(){
+function getUsertsFromLocalStorage(){
     const products =JSON.parse(localStorage.getItem('users'));
     if(!products){
+        alert("Không có users")
         return [];
     }
     else{
         return products;
     }
 }
+var users=getUsertsFromLocalStorage();
+var rooms= getRoomsFromLocalStorage();
 //Hàm lấy url từ đường dẫn
 function getQueryParam(param){
     var urlParam = new URLSearchParams(window.location.search);
@@ -171,9 +175,12 @@ function pushInHistory(){
     })
     document.getElementById('totalPay').innerHTML= total;
 }
-//hàm khi nhấn button
+//hàm khi nhấn button(chưa hoàn thành)
 function thanhtoan(){
-    user.history=user.history.concat(user.book);
+    const pay1=document.getElementById('pay1');
+    const pay2 =document.getElementById('pay2');
+    if ((pay1.checked)||(pay2.checked)){
+        user.history=user.history.concat(user.book);
     user.book.forEach(bo => {
         rooms.forEach(room => {
             if(room.id==bo.idRoom){
@@ -185,11 +192,20 @@ function thanhtoan(){
         });
     });
     user.book=[];
+    users.forEach(objec => {
+        if(objec.id==user.id){
+            objec=user;
+        }
+    })
+    localStorage.setItem('users',JSON.stringify(users));
+    localStorage.setItem('rooms',JSON.stringify(rooms));
     alert("đã thanh toán");
     //email(chưa thanh toán)
     console.log(user)
     console.log(rooms)
-
+    }else{
+        alert("Chọn hình thức thanh toán")
+    }
 }
 //hàm tách thời gian
 function tachThoiGian(a,b){
@@ -205,10 +221,8 @@ function tachThoiGian(a,b){
     }
     return listTime
 }
-console.log("hi",tachThoiGian('2024-10-01','2024-10-04'));
 var lister=tachThoiGian('2024-10-01','2024-10-04').concat('2024-11-15')
-console.log(sortDate(lister))
-//Hàm xắp xếp ngày từ bé đến lớn
+//Hàm sắp xếp ngày từ bé đến lớn
 function sortDate(list){
     return list.sort((a, b) => new Date(a) - new Date(b));
 }

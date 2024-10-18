@@ -60,7 +60,8 @@
                 <div class="form-container">
                     <h3 class="text-center mb-4">Xin chào</h3>
                     <h5 class="text-center">Điền vào các thông tin dưới đây để đăng nhập tài khoản</h5>
-                    <form>
+                    <!--form-->
+                    <form action="admin.js" method="submit">
                         <div class="mb-3">
                             <label for="username" class="form-label">Tên đăng nhập</label>
                             <input type="text" class="form-control" id="username" required>
@@ -72,13 +73,13 @@
                         <div class="mb-3 text-end">
                             <a href="#">Quên mật khẩu?</a>
                         </div>
+                        <!--onclick="Login(event)" của button dưới-->
                         <button type="submit" class="btn w-100" 
-                        style="background-color: #003366; color: white;"
-                        onclick="Login(event)">Đăng nhập</button>
+                        style="background-color: #003366; color: white;">Đăng nhập</button>
                         <div class="text-center mt-3">
                             <span>hoặc</span>
                         </div>
-                        <button type="submit" class="btn w-100" style="background-color: #003366; color: white;">Tạo tài khoản</button>
+                        <button type="button" onclick="register(event)"  class="btn w-100" style="background-color: #003366; color: white;">Tạo tài khoản</button>
 
                     </form>
                 </div>
