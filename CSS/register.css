@@ -1,15 +1,5 @@
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 body {
     min-height: 100vh;
-}
-.form-section{
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 .form-section, .logo-section {
     min-height: 100vh;
@@ -24,7 +14,7 @@ body {
     max-width: 500px;
 }
 .btn:hover {
-    background-color: #00509e; /* Màu nền khi hover */
+    background-color: #73aee9; /* Màu nền khi hover */
 }
 
 .btn:active {
@@ -43,17 +33,43 @@ body {
 .breadcrumb-item a:hover {
     text-decoration: underline;
 }
-html, body{
-    overflow-x: hidden;
-    height: 100%;
-}
+
+
 header {
-    position: sticky;
+    position: sticky; /* Giữ header ở trên cùng khi cuộn */
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(243, 240, 240, 0.7); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0; 
-  }
+    margin-bottom: 20px; /* Thêm margin dưới header */
+}
+
+footer {
+    margin-top: 20px; /* Thêm margin trên footer để tạo khoảng cách */
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    flex: 1; /* Container chính chiếm hết không gian còn lại */
+}
+
+header a{
+    color: rgb(10, 0, 0);
+}
+header a:hover{
+    color: rgb(21, 21, 229);
+    transform: scale(1.05);
+}
+html, body{
+    overflow-x: hidden;
+    height: 100%;
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
