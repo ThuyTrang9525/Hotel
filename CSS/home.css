@@ -228,6 +228,13 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
+.form-informkk{
+    height: 5x;
+}
+.form-informkk p{
+    color: red;
+    margin: 0;
+}
 
 .size-small {
     grid-column: span 2;

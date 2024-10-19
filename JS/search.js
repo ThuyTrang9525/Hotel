@@ -135,11 +135,19 @@ var beFilter=getQueryParam('type');
 console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
 var users= getUsersFromLocalStorage();
-var user = findUser("u1");
+var user = findUser(getQueryParam('userId'));
 console.log(user)
 // xác nhận ngày dến và ngày đi(chưa hoàn thành)
-var startDay1= "2024-10-13"
-var endDay1="2024-10-16"
+var startDay1=""
+var endDay1=""
+if(user.book.length>0){
+    alert("tiếp tục đặt sản phẩm")
+    var startDay1=user.book[0].dateTo;
+    var endDay1=user.book[0].dataLeave;
+}else{
+    var startDay1= getQueryParam('day1')
+    var endDay1=getQueryParam('day2')
+}
 var startDayChance = new Date(startDay1);
 var endDayChance = new Date (endDay1);
 var startDay =changeTime(startDayChance)
@@ -149,6 +157,7 @@ console.log(numDay)
 document.getElementById('bookDateToHotel').innerHTML=startDay;
 document.getElementById('bookDateBackHotel').innerHTML=endDay;
 document.getElementById('bookNumDateHotel').innerHTML=numDay;
+
 
 //
 
@@ -316,7 +325,6 @@ function findRoomAcodingTypeRoom(list){
         boxFilterTypeRoom.style.display = "block"
         typeRoom.style.backgroundColor= "rgb(143, 143, 143)"
         statusTypeRoom1.checked = true;
-        console.log(statusTypeRoom1.checked)
         beFilter="";
     }else if (beFilter=="2"){
         boxFilterTypeRoom.style.display = "block"
@@ -401,7 +409,8 @@ function findRoomAtType(list,type){
 }
 //(3)Hàm tìm phòng mà có ngày khác
 function findRoomByDate(list){
-    if(!rooms[0].time){
+    if(!('time') in rooms[0]){
+        let listafter=list;
         alert("Không có thuộc tính time")
     }
     const bien=sortDate(tachThoiGian(startDay1,endDay1))
