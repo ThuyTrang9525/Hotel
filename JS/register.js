@@ -59,9 +59,9 @@ document.querySelector('form').addEventListener('submit', function(event) {
                 // Lưu dữ liệu người dùng vào localStorage
                 users.push(user);
                 localStorage.setItem('users', JSON.stringify(users));
-            
+                document.getElementById('username').style.border ="none"
                 alert("Đăng ký thành công!");
-                document.getElementById('username').style.border ="1px solid black"
+                window.location.href = '/HTML/login.html'; // Đường dẫn đến trang đăng nhập của bạn
             }
         }else{
             alert("tên tài khoảng không được có khỏng trống giữa các dòng");
@@ -69,6 +69,16 @@ document.querySelector('form').addEventListener('submit', function(event) {
         }
     }
 });
+//Tìm số id
+function findNum(){
+    //vd users[0].id="u1",users[1].id="u2"
+    let idUser=users[(users.length-1)].id;
+    let numString = idUser.substring(1);
+    let nu=parseInt(numString);
+    nu=nu+1;
+    return nu
+}
+/*
 // Hàm để chuyển hướng đến trang đăng nhập
 function redirectToLogin() {
     window.location.href = '/HTML/login.html'; // Đường dẫn đến trang đăng nhập của bạn
@@ -80,15 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Ngăn không cho form gửi mặc định
         // Ở đây bạn có thể thực hiện các xử lý để đăng ký tài khoản (kiểm tra, gửi dữ liệu đến server, v.v.)
         // Nếu đăng ký thành công, thực hiện chuyển hướng
-      // redirectToLogin();
+        redirectToLogin();
     });
 });
-function findNum(){
-    //vd users[0].id="u1",users[1].id="u2"
-    let idUser=users[(users.length-1)].id;
-    let numString = idUser.substring(1);
-    let nu=parseInt(numString);
-    nu=nu+1;
-    return nu
-}
-
+*/
