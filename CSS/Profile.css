@@ -125,7 +125,7 @@ button:hover{
     left: 43%;
 }
 
-.hidden {
+#saveButton {
     display: none;
 }
 

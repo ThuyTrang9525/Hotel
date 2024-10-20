@@ -200,6 +200,10 @@ function thanhtoan(){
     localStorage.setItem('users',JSON.stringify(users));
     localStorage.setItem('rooms',JSON.stringify(rooms));
     alert("đã thanh toán");
+    //chuyển trang
+    const beHaft ="HTML/home.html?userId="+user.id;
+    const url = new URL (beHaft,window.location.origin);
+    window.location.href=url.toString();
     //email(chưa thanh toán)
     console.log(user)
     console.log(rooms)

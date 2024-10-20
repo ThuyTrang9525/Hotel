@@ -81,6 +81,17 @@ if(users.length>0&&getQueryParam('userId')){
     //Tạo một user giả
     user=userFake;
 }
+//Gắn key userId vào link các đường dẫn được chọn
+var listAHrefChange=document.querySelectorAll('.aHref');
+listAHrefChange.forEach(hreff=> {
+    const hrefAfter=hreff.getAttribute('href')+addUserIdOnmenu()
+    hreff.setAttribute('href',hrefAfter)
+})
+function addUserIdOnmenu(){
+    const beHaft ="?userId="+user.id;
+    return beHaft;
+}
+//
 //const productId = getQueryParameter('id');
 //Js cho phần model
 var modal = document.getElementById("bookingModal");
@@ -131,6 +142,8 @@ typeRoom.forEach(type =>{
 const search =document.getElementById('search');
 search.addEventListener('click', function(){
     const checkInDate = new Date(checkInInput.value);
+    console.log(checkInDate)
+    console.log(today)
     const checkOutDate = new Date(checkOutInput.value);
     if(today>checkInDate||checkInDate>checkOutDate){
         document.getElementById('addd').innerHTML="Nhập đúng ngày, chúng tôi chỉ hỗ trợ từ đây tới 3 năm"
