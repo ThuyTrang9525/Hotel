@@ -14,7 +14,7 @@
         <!--Logo -->
         <div class="container-fluid d-flex justify-content-between align-items-center"> 
           <div class="d-flex align-items-center ms-0"> 
-            <a href="/HTML/home.html">
+            <a class="aHref" href="/HTML/home.html">
                 <img src="/IMAGE/Logo.png" alt="Hotel Logo" style="width: 150px;" class="me-2">
             </a>
             <h1 class="h4 mb-0">Nice Dream</h1>
@@ -36,11 +36,11 @@
             <a href="/HTML/register.html" class="btn btn-primary me-4">Đăng kí</a>
             <div class="d-flex align-items-center me-4">
               <i class="bi bi-person me-2" style="font-size: 24px;"></i>
-              <a href="/HTML/Profile.html" class="text-decoration-none">Tài khoản</a>
+              <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
 
             <!-- Liên kết lịch sử đặt phòng -->
             </div>
-            <a href="/HTML/History.html" class="d-flex align-items-center text-decoration-none">
+            <a href="/HTML/History.html" class="aHref d-flex align-items-center text-decoration-none">
               <i class="bi bi-calendar-check-fill me-2" style="font-size: 24px;"></i> 
               <span>Lịch sử đặt phòng</span>
             </a>
@@ -56,43 +56,43 @@
             <div class="form-group">
                 <label for="username">Tên đăng nhập</label>
                 <div class="group-input">
-                    <input type="text" id="prf-username" name="prf-username" required>
+                    <input type="text" id="prf-username" name="prf-username" required readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="username">Tên</label>
                 <div class="group-input">
-                    <input type="text" id="name" name="name" required>
+                    <input class="input" type="text" id="name" name="name" required readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <div class="group-input">
-                    <input type="text" id="prf-email" name="email" required>
+                    <input class="input" type="text" id="prf-email" name="email" required readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
                 <div class="group-input">
-                    <input type="text" id="prf-password" name="password" required>
+                    <input class="input" type="text" id="prf-password" name="password" required readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="phone">Số điện thoại</label>
                 <div class="group-input">
-                    <input type="text" id="prf-phone" name="phone" required>
+                    <input class="input" type="text" id="prf-phone" name="phone" required readonly>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="gender">Giới tính</label>
                 <div class="item-gender">
-                    <input type="radio" id="pfr-male" name="gender" value="male" checked>Nam
-                    <input type="radio" id="prf-female" name="gender" value="female" checked>Nữ
+                    <input type="radio" id="pfr-male" name="gender" value="male" checked readonly>Nam
+                    <input type="radio" id="pfr-female" name="gender" value="female" checked readonly>Nữ
                 </div>
             </div>
 
@@ -109,14 +109,15 @@
             <div class="form-group">
                 <label for="address">Địa chỉ</label>
                 <div class="group-input">
-                    <input type="text" id="address" name="address" required>
+                    <input class="input" type="text" id="address" name="address" required readonly>
                 </div>
             </div>
 
             <div class="edit">
                 <button type="button" onclick="enableEdit()">Chỉnh sửa</button>
-                <button class="hidden" id="saveButton" type="button" onclick="saveUserInfo()">Lưu Thông Tin</button>  
-                <button class="log-out" onclick="logout()">Đăng xuất</button>
+                <!--class="hidden"-->
+                <button id="saveButton" type="button" onclick="saveUserInfo()">Lưu Thông Tin</button>  
+                <button type="button" class="log-out" onclick="logout()">Đăng xuất</button>
             </div>
             
         </form>

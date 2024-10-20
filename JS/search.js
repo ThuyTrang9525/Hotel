@@ -136,6 +136,17 @@ console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
 var users= getUsersFromLocalStorage();
 var user = findUser(getQueryParam('userId'));
+//Gắn key userId vào link các đường dẫn được chọn
+var listAHrefChange=document.querySelectorAll('.aHref');
+listAHrefChange.forEach(hreff=> {
+    const hrefAfter=hreff.getAttribute('href')+addUserIdOnmenu()
+    hreff.setAttribute('href',hrefAfter)
+})
+function addUserIdOnmenu(){
+    const beHaft ="?userId="+user.id;
+    return beHaft;
+}
+//
 console.log(user)
 // xác nhận ngày dến và ngày đi(chưa hoàn thành)
 var startDay1=""
@@ -187,6 +198,8 @@ function showResultRooms(){
     let add =document.getElementById('boxResult');
     add.innerHTML ="";
     listRoom.forEach(room =>{
+        const linkdetailFake ="HTML/detailsroom.html?id="+room.id
+        const linkDetail = new URL (linkdetailFake,window.location.origin);
         add.innerHTML+=
         `<div class="boxRoom">
                 <div class="image">
@@ -194,7 +207,7 @@ function showResultRooms(){
                 </div>
                 <div class="boxRoomNon">
                     <div class="boxRoomFlexNon">
-                        <div class="roomNon"><p class="textTemplate textA">${room.name}</p></div>
+                        <div class="roomNon"><a href="${linkDetail}"><p class="textTemplate textA">${room.name}</p></a></div>
                         <div class="roomNon"><p class="textTemplate text3"> <i class="fas fa-user-friends"></i>2 người</p></div>
                     </div>
                     <div class="boxRoomFlexNon">
