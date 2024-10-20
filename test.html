@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Countdown Overlay</title>
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài */
+}
+
+.zigzag-top,
+.zigzag-bottom {
+    width: 100%;
+    height: 100px; /* Chiều cao cho ảnh răng cưa */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 2; /* Đặt z-index cao hơn ảnh nền */
+}
+
+.zigzag-top {
+    background-image: url('/IMAGE/line2.png'); /* Đường dẫn ảnh răng cưa phía trên */
+    top: 0;
+}
+
+.zigzag-bottom {
+    background-image: url('/IMAGE/line1.png'); /* Đường dẫn ảnh răng cưa phía dưới */
+    bottom: 0;
+}
+
+.background-image {
+    background-image: url('/IMAGE/w2.jpg'); /* Ảnh nền chính */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Loại bỏ position: relative và z-index */ 
+}
+
+.overlay-content {
+    color: white;
+    text-align: center;
+    position: absolute;
+    z-index: 2; /* Đảm bảo nội dung nằm trên hình nền */
+}
+
+.overlay-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.overlay-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.countdown div {
+    text-align: center;
+}
+
+.countdown span {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.countdown p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="zigzag-top"></div> <!-- Ảnh răng cưa trên -->
+        
+        <div class="background-image">
+            <div class="overlay-content">
+                <h2>Last Minute!</h2>
+                <h1>Incredible! Are you coming today</h1>
+                <div class="countdown">
+                    <div>
+                        <span>00</span>
+                        <p>Days</p>
+                    </div>
+                    <div>
+                        <span>00</span>
+                        <p>Hours</p>
+                    </div>
+                    <div>
+                        <span>00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div>
+                        <span>00</span>
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zigzag-bottom"></div> <!-- Ảnh răng cưa dưới -->
+    </div>
+
+</body>
+</html>
