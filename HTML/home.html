@@ -15,14 +15,14 @@
     <header class="p-3">
         <div class="container-fluid d-flex justify-content-between align-items-center"> 
           <div class="d-flex align-items-center ms-0"> 
-            <a href="/HTML/home.html">
+            <a class="aHref" href="/HTML/home.html">
               <img src="/IMAGE/Logo.png" alt="Hotel Logo" style="width: 150px;" class="me-2">
           </a>
           </div>
           <div class="d-flex align-items-center">
             <div class="d-flex align-items-center me-4">
               <a href="javascript:void(0)" id="book-room" class="text-decoration-none">
-                <i class="fa-solid fa-house" style="font-size: 24px;"class="me-1"></i> 
+                <i class="fa-solid fa-house me-1" style="font-size: 24px;"></i> 
                 Thuê phòng khách sạn</a>
             </div>
             <a href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
@@ -34,9 +34,9 @@
               Đăng kí</a>
             <div class="d-flex align-items-center me-4">
               <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
-              <a href="/HTML/Profile.html" class="text-decoration-none">Tài khoản</a>
+              <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
             </div>
-            <a href="/HTML/History.html" class="d-flex align-items-center text-decoration-none">
+            <a href="/HTML/History.html" class="aHref d-flex align-items-center text-decoration-none">
               <i class="bi bi-calendar-check-fill me-2" style="font-size: 24px;"></i> 
               <span>Lịch sử đặt phòng</span>
             </a>
@@ -46,109 +46,133 @@
     <div class="containerr-fluid">
         <div class="slide">
             <div class="item" style="background-image: url(/IMAGE/spa3.jpg);">
-                <div class="content">
-                    <div class="name">Switzerland</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=1">See more</a>
-                </div>
             </div>
             <div class="item" style="background-image: url(/IMAGE/gym3.jpg);">
-                <div class="content">
-                    <div class="name">Finland</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=2">See more</a>
-                </div>
             </div>
             <div class="item" style="background-image: url(/IMAGE/pool.jpg);">
-                <div class="content">
-                    <div class="name">Iceland</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=3">See more</a>
-                </div>
             </div>
             <div class="item" style="background-image: url(/IMAGE/restaurant.jpg);">
-                <div class="content">
-                    <div class="name">Australia</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=2">See more</a>
-                </div>
             </div>
             <div class="item" style="background-image: url(/IMAGE/sauna.jpg);">
-                <div class="content">
-                    <div class="name">Netherland</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=2">See more</a>
-                </div>
             </div>
             <div class="item" style="background-image: url(/IMAGE/carYellow.jpg);">
-                <div class="content">
-                    <div class="name">Ireland</div>
-                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
-                    <a id="seeMore" href="/HTML/detailsroom.html?id=2">See more</a>
-                </div>
             </div>   
             <div class="move">
                 <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
                 <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
             </div> 
         </div>
-        <div>
+      </div>
+      <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Đặt Phòng Khách Sạn</h1>
+            <form>
+                <div class="grid-container">
+                    <div class="form-group">
+                        <label for="check-in">Nhận phòng</label>
+                        <input type="date" id="check-in" name="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Trả phòng</label>
+                        <input type="date" id="check-out" name="check-out" required>
+                    </div>
+                    <div>
+                    <div class="form-group form-informkk">
+                        <p id="addd"></p>
+                    </div>
+                    </div>
+                    <div class="form-group size-small">
+                        <label for="rental-days">Số ngày</label>
+                        <input type="number" id="rental-days" name="rental-days" readonly>
+                    </div>
+                    <div class="form-group size-small">
+                        <button id="search" class="small" type="button">Tìm phòng</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <div class="room-us">
+      <p>Phòng của chúng tôi</p>
+      <h2>Phòng và căn hộ hấp dẫn</h2>
+      <div class="interface-rooms">
+          <div class="left-section">
+            <div class="the">
+              <i class="fas fa-desktop"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Không chi phí đặt phòng</p>
+            </div>
+            <div class="the">
+              <i class="fas fa-dollar-sign"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Đảm bảo giá tốt nhất</p>
+          </div>
+          <div class="the">
+              <i class="fas fa-headset"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Đặt phòng 24/7</p>
+          </div>
+          <div class="the">
+              <i class="fas fa-wifi"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Wifi tốc độ cao</p>
+          </div>
+          <div class="the">
+              <i class="fas fa-coffee"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Miễn phí buổi sáng</p>
+          </div>
+          <div class="the">
+              <i class="fas fa-user"></i>
+              <p class="title">Chi phí miễn phí</p>
+              <p class="description">Miễn phí cho một người</p>
+          </div>
+            </div>
+          <div class="right-section">
+          </div>
         </div>
       </div>
-        <div id="bookingModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1>Đặt Phòng Khách Sạn</h1>
-                <form>
-                    <div class="grid-container">
-                        <div class="form-group">
-                            <label for="check-in">Nhận phòng</label>
-                            <input type="datetime-local" id="check-in" name="check-in" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="check-out">Trả phòng</label>
-                            <input type="datetime-local" id="check-out" name="check-out" required>
-                        </div>
-                        <div class="form-group size-small">
-                            <label for="rental-days">Số ngày</label>
-                            <select id="rental-days" name="rental-days">
-                                <option value="1">1 ngày</option>
-                                <option value="2">2 ngày</option>
-                                <option value="3">3 ngày</option>
-                                <option value="4">4 ngày</option>
-                                <option value="5">5 ngày</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="rooms">Số phòng</label>
-                            <select id="rooms" name="rooms">
-                                <option value="1">1 phòng</option>
-                                <option value="2">2 phòng</option>
-                                <option value="3">3 phòng</option>
-                                <option value="4">4 phòng</option>
-                                <option value="5">5 phòng</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="guests">Khách</label>
-                            <input type="number" id="guests" name="guests" min="1" value="2">
-                        </div>
-                        <div class="form-group size-small">
-                            <button class="small" type="submit">Tìm phòng</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+<!-- Thêm một cảnh vào trong phần home khách sạn -->
+<div class="wrapper">
+  <div class="zigzag-top"></div> <!-- Ảnh răng cưa trên -->
+  
+  <div class="background-image">
+      <div class="overlay-content">
+          <h2>Last Minute!</h2>
+          <h1>Incredible! Are you coming today</h1>
+          <div class="countdown">
+              <div>
+                  <span>00</span>
+                  <p>Days</p>
+              </div>
+              <div>
+                  <span>00</span>
+                  <p>Hours</p>
+              </div>
+              <div>
+                  <span>00</span>
+                  <p>Minutes</p>
+              </div>
+              <div>
+                  <span>00</span>
+                  <p>Seconds</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="zigzag-bottom"></div> <!-- Ảnh răng cưa dưới -->
+</div>
 <!-- HTML Các loại phòng phổ biến -->
         <div class="container-fluid pt-3 mb-2">
           <h1 class="mb-4" style="color: rgb(107, 104, 101)">Các loại phòng phổ biến</h1>
           <div class="row">
-            <div class="col-md-4">
+            <!--Các loại phòng-->
+            <div class="col-md-4" data-type="&type=1">
               <div class="image-container">
-                <!--Đường dẫn của loại phòng tổng thống-->
-                <a href="search.html?type=1"><img src="/IMAGE/phong1.jpg" alt="" style="width: 100%; height: 400px;"></a>
+                <a href="#"><img src="/IMAGE/phong1.jpg" alt="" style="width: 100%; height: 400px;"></a>
                 <div class="text-overlay">Phòng Tổng Thống
                   <ul class="list-unstyled d-flex justify-content-center" style="font-size: 13px;">
                     <li>Sang trọng</li>
@@ -160,10 +184,10 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-type="&type=2"><!--Tên chỉ dùng cho phần này -->
               <div class="image-container">
                 <!--Đường dẫn của loại phòng thương gia-->
-                <a href="search.html?type=2"><img src="/IMAGE/phòng_thương_gia.jpg" alt="" style="width: 100%; height: 400px;"></a>
+                <a href="#"><img src="/IMAGE/phòng_thương_gia.jpg" alt="" style="width: 100%; height: 400px;"></a>
                 <div class="text-overlay">Phòng Thương Gia
                   <ul class="list-unstyled d-flex justify-content-center" style="font-size: 13px;">
                     <li>Cao cấp</li>
@@ -175,10 +199,10 @@
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="image-container">
+            <div class="col-md-4" data-type="&type=3">
+              <div class="image-container"><!--Tên chỉ dùng cho phần này -->
                 <!--Đường dẫn của loại phòng thường-->
-                <a href="search.html?type=3"><img src="/IMAGE/phòng thường.jpg" alt="" style="width: 100%; height: 400px;"></a>
+                <a href="#"><img src="/IMAGE/phòng thường.jpg" alt="" style="width: 100%; height: 400px;"></a>
                 <div class="text-overlay">Phòng Phổ Thông
                   <ul class="list-unstyled d-flex justify-content-center" style="font-size: 13px;">
                     <li>Phổ biến</li>
@@ -191,6 +215,8 @@
             </div>
           </div>
         </div>
+
+
 
         <!-- Footer -->
         <footer class="container-fluid p-0">
@@ -205,7 +231,6 @@
                   alt="logo"
                   style="height: 50px"
                 />
-                NICE DREAM City Hotels
               </div>
               <div class="col-md-3">
                 <a href="#" class="me-3"
@@ -233,11 +258,9 @@
               <div class="row p-5">
                 <div class="col-md-8 col-sm-12">
                   <img src="/IMAGE/Logo.png" alt="" style="height: 50px" />
-                  <img src="/IMAGE/Logo.png" alt="" style="height: 50px" />
-                  <h5>DREAM Hotels and Villas</h5>
-                  <p class="pt-5">NICE DREAM DANANG</p>
+                  <p class="pt-5">ECORIK DANANG</p>
                   <address>
-                    101B, Le Huu Trac, Son Tra, Da Nang, NICE DREAM hotel at Da Nang
+                    101B, Lê Hữu Trác, Sơn Trà, Đà Nẵng, Khách sạn ECORIK Đà Nẵng 
                   </address>
                   <p><strong>Phone: </strong> +84-76-253-026</p>
                 </div>
@@ -290,5 +313,5 @@
             </div>
           </footer>
     <script src="/JS/home.js"></script>
-</body>
+1</body>
 </html>

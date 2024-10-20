@@ -36,7 +36,7 @@ html, body{
     flex-direction: column;
     position: relative;
     left: 20%;
-    top: 140px;
+    top: 10px;
     padding: 20px;
     box-sizing: border-box;
     justify-items: center;
@@ -52,9 +52,9 @@ p {
 }
 
 .form-container {
-    width: 900PX;
+    width: 800PX;
     margin-left: 70px;
-    font-size: 18px;
+    font-size: 16px;
     align-items: center;
 }
 
@@ -125,7 +125,7 @@ button:hover{
     left: 43%;
 }
 
-.hidden {
+#saveButton {
     display: none;
 }
 

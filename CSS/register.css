@@ -47,7 +47,8 @@ header {
 }
 
 footer {
-    margin-top: 20px; /* Thêm margin trên footer để tạo khoảng cách */
+     /* Thêm margin trên footer để tạo khoảng cách */
+     margin-top:20px;
 }
 html, body {
     height: 100%;
