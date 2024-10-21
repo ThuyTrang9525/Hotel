@@ -22,7 +22,7 @@ typeRoom.addEventListener('click',function(){
 })
 var users =[
 {
-    id:"u01",
+    id:"u1",
     fullname: "user1",
     phone: "000001",
     email: "user1@.com",
@@ -36,7 +36,7 @@ var users =[
     history:[],
     },
     {
-    id:"u02",
+    id:"u2",
     fullname: "user2",
     phone: "000001",
     email: "user2@.com",
@@ -50,7 +50,7 @@ var users =[
     history:[],
     },
     {
-    id:"u03",
+    id:"u3",
     fullname: "user3",
     phone: "000001",
     email: "user3@.com",
@@ -100,6 +100,28 @@ function getProductsFromLocalStorage(){
         return products;
     }
 }
+// Hàm tính ngày tự động 
+const checkInInput = document.getElementById('check-in');
+const checkOutInput = document.getElementById('check-out');
+const rentalDaysInput = document.getElementById('rental-days');
+
+function calculateRentalDays() {
+    const checkInDate = new Date(checkInInput.value);
+    const checkOutDate = new Date(checkOutInput.value);
+
+    // Kiểm tra xem cả hai ngày có hợp lệ và ngày trả phòng lớn hơn ngày nhận phòng
+    if (checkInDate && checkOutDate && checkOutDate > checkInDate) {
+        const timeDiff = checkOutDate - checkInDate; // Tính sự khác biệt giữa hai ngày
+        const dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Đổi từ mili giây sang ngày
+        rentalDaysInput.value = dayDiff; // Hiển thị số ngày vào trường "Số ngày"
+    } else {
+        rentalDaysInput.value = 0; // Đặt lại giá trị nếu không hợp lệ
+    }
+}
+
+// Lắng nghe sự kiện khi người dùng thay đổi giá trị của check-in hoặc check-out
+checkInInput.addEventListener('change', calculateRentalDays);
+checkOutInput.addEventListener('change', calculateRentalDays);
 //Hàm lấy phòng từ locla chưa chỉnh
 function getProductsFromLocalStorage(){
     const products =JSON.parse(localStorage.getItem('rooms'));

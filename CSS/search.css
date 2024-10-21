@@ -1,21 +1,36 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgb(236, 236, 236);
     padding: 0;
-    margin: 0.1px;
+    margin: 0px;
 }
+
 header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(243, 240, 240, 0.7); 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0; 
-  }
+    margin-bottom: 0;
+}
+header a{
+    color: rgb(10, 0, 0);
+}
+header a:hover{
+    color: rgb(21, 21, 229);
+    transform: scale(1.05);
+}
+html, body{
+    background: #eaeaea;
+}
 body p{
     margin: 10px 0;
     display: flex;
@@ -222,4 +237,17 @@ body p{
 }
 .numRoomChoseBook{
     width: 270px;
+}
+.breadcrumb {
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
 }

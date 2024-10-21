@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/CSS/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/payment.css">
     <title>Thanh toán</title>
 </head>
 <body>
+    <div class="menu"></div>
+    <header class="p-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center"> 
+          <div class="d-flex align-items-center ms-0"> 
+            <a class="aHref" href="/HTML/home.html">
+              <img src="/IMAGE/Logo.png" alt="Hotel Logo" style="width: 150px;" class="me-2">
+          </a>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center me-4">
+              <a href="javascript:void(0)" id="book-room" class="text-decoration-none">
+                <i class="fa-solid fa-house me-1" style="font-size: 24px;" >Thuê phòng khách sạn</i> </a>
+            </div>
+            <a href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
+              <i class="bi bi-person-circle me-2" style="font-size: 24px;"></i> 
+              Đăng nhập
+            </a>
+            <a href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
+              <i class="fa fa-registered me-2" style="font-size:24px"></i>
+              Đăng kí</a>
+            <div class="d-flex align-items-center me-4">
+              <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
+              <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
+            </div>
+            <a href="/HTML/History.html" class="aHref d-flex align-items-center text-decoration-none">
+              <i class="bi bi-calendar-check-fill me-2" style="font-size: 24px;"></i> 
+              <span>Lịch sử đặt phòng</span>
+            </a>
+          </div>
+        </div>
+    </header>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/HTML/home.html">Trang chủ</a></li>
-          <li class="breadcrumb-item active" aria-current="page"><a href="/HTML/payment.html">Thanh toán</a></li>
+          <li class="breadcrumb-item"><a class="aHref" href="/HTML/home.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
         </ol>
     </nav>
-    <div class="menu"></div>
     <p class=" textTemplate title">Đặt phòng khách sạn</p>
     <div class="framPay">
         <form action="" id="payForm">
@@ -41,15 +77,15 @@
             <div class="box">
                 <div class="flex-box">
                     <p class="paraName distance4">Tên phòng:</p>
-                    <p class="paraResultBook weight" id="nameRoom">Connecting With Balcony Room</p>
+                    <p class="paraResultBook weight" id="nameRoom"></p>
                 </div>
                 <div class="flex-box">
                     <p class="paraName distance4" >Giờ nhận phòng:</p>
-                    <p class="paraResultBook weight" id="dateGiveRoom">17:00, 09 tháng 4 năm 2023</p>
+                    <p class="paraResultBook weight" id="dateGiveRoom"></p>
                 </div>
                 <div class="flex-box">
                     <p class="paraName distance4">Giờ trả phòng:</p>
-                    <p class="paraResultBook weight" id="datePayRoom">12:00, 10 tháng 4 năm 2023</p>
+                    <p class="paraResultBook weight" id="datePayRoom"></p>
                 </div>
                 <div class="flex-box">
                     <p class="paraName distance4">Số khách ở:</p>
@@ -58,7 +94,7 @@
             </div>
             <p class="textTemplate title-non">Dịch vụ khách sạn</p>
             <div class="boxService" id="boxService">
-                <div class="boxServiceNon">
+                <!--<div class="boxServiceNon">
                     <input type="checkbox" name="se1" id="se1" value="15000">
                     <p> Bánh mì que</p>
                     <p class="paraResultServicePrice"> 15000</p>
@@ -102,10 +138,10 @@
                     <input type="checkbox" name="se9" id="se9" value="15000">
                     <p>Nước ngọt</p>
                     <p class="paraResultServicePrice"> 15000</p>
-                </div>
+                </div>-->
             </div>
             <div class="boxService" id="boxService2">
-                <div class="boxServiceNon distance3">
+                <!--<div class="boxServiceNon distance3">
                     <input type="radio" name="tran1" id="tran1" value="30000">
                     <p>Đưa đón sân bay bằng xe máy</p>
                     <p class="paraResultServicePrice"> 30000</p>
@@ -115,23 +151,15 @@
                     <p>Đưa đón sân bay bằng ô tô</p>
                     <p class="paraResultServicePrice"> 150000</p>
                 </div>
-                <br>
+                <br>-->
             </div>
             <p class="textTemplate title-non">Thanh toán</p>
             <div class="thanhToan">
                 <div id="thanhToan">
-                    <div class="boxServiceNon distance2">
-                        <p>Connecting With Balcony Room</p>
-                        <p class="paraResultServicePrice"> 15000</p>
-                    </div>
-                    <div class="boxServiceNon distance2">
-                        <p>Đưa đón sân bay bằng ô tô</p>
-                        <p class="paraResultServicePrice"> 15000</p>
-                    </div>
                 </div>
                 <div class="boxServiceNon distance2">
                     <p class="weight">Tổng thanh toán:</p>
-                    <p class="paraResultServicePrice weight" id="totalPay"> 15000</p>
+                    <p class="paraResultServicePrice weight" id="totalPay"> </p>
                 </div>
             </div>
             <p class="textTemplate title-non">Trả bằng</p>
@@ -146,9 +174,10 @@
                 </label>
             </div>
             <div class="boxButton">
-                <button class="textTemplate">Đặt phòng</button>
+                <button type="button" class="textTemplate" onclick="thanhtoan()">Đặt phòng</button>
             </div>
         </form>
     </div>
+    <script src="/JS/payment.js"></script>
 </body>
 </html>
