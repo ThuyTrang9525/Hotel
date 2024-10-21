@@ -36,7 +36,7 @@ html, body{
     flex-direction: column;
     position: relative;
     left: 20%;
-    top: 10px;
+    top: 30px;
     padding: 20px;
     box-sizing: border-box;
     justify-items: center;
@@ -107,10 +107,10 @@ button {
     height: 40px;
     border-radius: 5px;
     color: white;
-    background-color: navy;
+    background-color:  #003366;
 }
 button:hover{
-    background: linear-gradient(to right, rgb(242, 153, 74), rgb(242, 201, 76));
+    transform: scale(1.05);
 }
 
 .edit {
