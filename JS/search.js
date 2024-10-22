@@ -197,13 +197,15 @@ function showResultRooms(){
     //in ra trang web
     let add =document.getElementById('boxResult');
     add.innerHTML ="";
+    //"/IMAGE/doubleBed1.webp"
     listRoom.forEach(room =>{
         const linkdetailFake ="HTML/detailsroom.html?id="+room.id
         const linkDetail = new URL (linkdetailFake,window.location.origin);
+        console.log(room.image)
         add.innerHTML+=
         `<div class="boxRoom">
                 <div class="image">
-                    <img src="/IMAGE/doubleBed1.webp" alt="image">
+                    <img src="${room.image}" alt="image">
                 </div>
                 <div class="boxRoomNon">
                     <div class="boxRoomFlexNon">
@@ -272,10 +274,10 @@ function addEvetChoseButton(){
         chose.dataset.type="false";
     }
     if(chose.dataset.type=="true"){
-        chose.style.backgroundColor ="blue";
+        chose.style.backgroundColor ="rgb(6, 6, 116)";//Màu ban đầu
         chose.innerHTML="Chọn"
     }else{
-        chose.style.backgroundColor ="red";
+        chose.style.backgroundColor ="rgb(180, 135, 22)";//Màu bỏ chon
             chose.innerHTML="Bỏ chọn"
     }
     chose.addEventListener('click',function(){
@@ -287,9 +289,10 @@ function addEvetChoseButton(){
                     dateTo:startDay1,
                     dataLeave:endDay1,
                     price: parseInt(room.price)*parseInt(numDay),
+                    typePay:"",
                 }
                 user.book.push(faker);
-                chose.style.backgroundColor ="red";
+                chose.style.backgroundColor ="rgb(180, 135, 22)";
                 chose.innerHTML="Bỏ chọn"
                 chose.dataset.type="false";
             }else{
@@ -297,7 +300,7 @@ function addEvetChoseButton(){
             }
         }else{
             user.book = user.book.filter(bo => bo.idRoom !== chose.dataset.roomId); 
-            chose.style.backgroundColor ="blue";
+            chose.style.backgroundColor ="rgb(6, 6, 116)";
             chose.innerHTML="Chọn"
             chose.dataset.type="true";
         }

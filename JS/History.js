@@ -66,7 +66,7 @@ if(user.history.length>0){
                       <p><strong class="me-3">Tổng tiền:</strong><span class="total-pay">${element.price}</span></p>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-                    <p><strong class="me-3">Tên dịch vụ:</strong><span class="service-name">...</span></p>
+                    <p><strong class="me-3">Hình thức thanh toán:</strong><span class="service-name">${element.typePay}</span></p>
                     <p><strong class="me-3">Thời gian đặt phòng:</strong><span class="booking-time">${element.dateTo}&nbsp;đến&nbsp;${element.dataLeave}</span></p>
                   </div>
               </div>

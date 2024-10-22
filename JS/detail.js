@@ -14,6 +14,7 @@ var rooms=getRoomsFromLocalStorage()
 var room=rooms.find(roo => roo.id==id)
 console.log(rooms)
 console.log(room)
+document.getElementById('room-image').getElementsByTagName('img')[0].src=room.image;
 document.getElementById('typeRoom').innerHTML=room.type;
 document.getElementById('nameRoom').innerHTML=room.name;
 document.getElementById('typeBed').innerHTML=room.bedType;
