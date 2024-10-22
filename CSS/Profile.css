@@ -11,16 +11,16 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(243, 240, 240, 0.7); 
+    background-color: black;
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
 }
 header a{
-    color: rgb(10, 0, 0);
+    color: #eaeaea;
 }
 header a:hover{
-    color: rgb(21, 21, 229);
+    color: #CC8C18;
     transform: scale(1.05);
 }
 html, body{
@@ -87,10 +87,14 @@ label {
 
 .gender {
     display: flex;
-    align-items: left;
 }
 
+.item-gender {
+    display: flex;
+    justify-content: space-between;
+}
 .item-gender input {
+    margin-left: 2px;
     zoom: 1.4;
     accent-color: blue;
 }
