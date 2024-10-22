@@ -40,7 +40,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: rgba(243, 240, 240, 0.7); 
+    background-color: black; 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; /* Thêm margin dưới header */
@@ -61,10 +61,10 @@ html, body {
 }
 
 header a{
-    color: rgb(10, 0, 0);
+    color: #eaeaea;
 }
 header a:hover{
-    color: rgb(21, 21, 229);
+    color: #CC8C18;
     transform: scale(1.05);
 }
 html, body{
