@@ -62,12 +62,15 @@ body{
     background-color: white;
     padding: 20px 80px;
     box-sizing: border-box;
-    border: 1px solid black
 }
 .box2{
     width: 800px;
     padding: 20px 80px;
     box-sizing: border-box;
+}
+#payForm{
+   
+
 }
 .flex-box{
    display: flex;

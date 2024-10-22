@@ -2,7 +2,6 @@ let rooms = [];
 let deleteIndex = null;
 let nextId = 1; 
 let editIndex = null;
-
 // Hàm lưu dữ liệu phòng lên local storage
 function saveRoomsToLocalStorage() {
     localStorage.setItem('rooms', JSON.stringify(rooms));
