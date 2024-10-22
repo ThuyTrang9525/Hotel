@@ -119,11 +119,11 @@ body{
     transition: background-color 0.3s;
 }
 #pay1:checked  + .custom-radio,#pay2:checked + .custom-radio{
-    background-color:chartreuse;
+    background-color:#CC8C18;
 }
 button{
     padding: 10px;
-    background-color: blue;
+    background-color: black;
     color: white;
     font-size: 45px;
     border-radius: 10px;
@@ -137,7 +137,7 @@ button{
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #007bff;
+    color: black
 }
 
 .breadcrumb-item a:hover {
