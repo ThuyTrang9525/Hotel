@@ -76,7 +76,7 @@ if(user.history.length>0){
                   <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                       <p><strong class="me-3">Tên Khách Hàng:</strong><span class="customer-name">${user.fullname}</span></p>
                       <p><a href="#" class="text-decoration-none me-3" style="color:black;font-weight: bold;">Tên Phòng:</a><span class="room-name">${room.name}</span></p>
-                      <p><strong class="me-3">Tổng tiền:</strong><span class="total-pay">${element.price}</span></p>
+                      <p><strong class="me-3">Tổng tiền:</strong><span class="total-pay">${changeMoney(element.price)} VNĐ</span></p>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
                     <p><strong class="me-3">Hình thức thanh toán:</strong><span class="service-name">${element.typePay}</span></p>
@@ -87,4 +87,28 @@ if(user.history.length>0){
     })
 }else{
     document.getElementById('history').innerHTML="<h4>Bạn Không có lịch sử đặt phòng nào</h4>"
+}
+//Hàm chuyển tiền
+function changeMoney(money){
+    let resultMoney=""
+    const StringMoney= money+"";
+    const num=StringMoney.length;
+    const num1=num/3|0;
+    if((num-num1*3)>0){
+        for(let i=0;i<(num-num1*3);i++){
+            if(i==(num-num1*3-1)){
+                resultMoney+=StringMoney.charAt(i)+".";
+            }else{
+                resultMoney+=StringMoney.charAt(i);
+            }
+        }
+    }
+    for(let i =0;i<num1*3;i++){
+        if((i+1)%3==0&&i!=(num1*3-1)){
+            resultMoney+=StringMoney.charAt(i+(num-num1*3))+".";
+        }else{
+            resultMoney+=StringMoney.charAt(i+(num-num1*3));
+        }
+    }
+    return resultMoney
 }

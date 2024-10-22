@@ -193,11 +193,11 @@ function pushInHistory(){
         payMoney.innerHTML+=`
             <div class="boxServiceNon distance2">
                 <p>${room1.name}</p>
-                <p class="paraResultServicePrice">${room.price} </p>
+                <p class="paraResultServicePrice">${changeMoney(room.price)}&nbsp;VNĐ </p>
             </div>
         `
     })
-    document.getElementById('totalPay').innerHTML= total;
+    document.getElementById('totalPay').innerHTML= changeMoney(total);
 }
 //hàm khi nhấn button(chưa hoàn thành)
 function thanhtoan(){
@@ -262,4 +262,28 @@ var lister=tachThoiGian('2024-10-01','2024-10-04').concat('2024-11-15')
 //Hàm sắp xếp ngày từ bé đến lớn
 function sortDate(list){
     return list.sort((a, b) => new Date(a) - new Date(b));
+}
+//Hàm chuyển tiền
+function changeMoney(money){
+    let resultMoney=""
+    const StringMoney= money+"";
+    const num=StringMoney.length;
+    const num1=num/3|0;
+    if((num-num1*3)>0){
+        for(let i=0;i<(num-num1*3);i++){
+            if(i==(num-num1*3-1)){
+                resultMoney+=StringMoney.charAt(i)+".";
+            }else{
+                resultMoney+=StringMoney.charAt(i);
+            }
+        }
+    }
+    for(let i =0;i<num1*3;i++){
+        if((i+1)%3==0&&i!=(num1*3-1)){
+            resultMoney+=StringMoney.charAt(i+(num-num1*3))+".";
+        }else{
+            resultMoney+=StringMoney.charAt(i+(num-num1*3));
+        }
+    }
+    return resultMoney
 }
