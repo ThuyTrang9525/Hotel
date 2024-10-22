@@ -41,6 +41,19 @@ if(!getQueryParam('userId')){
 }else{
     user=findUser(getQueryParam('userId'));
 }
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {
@@ -66,7 +79,7 @@ if(user.history.length>0){
                       <p><strong class="me-3">Tổng tiền:</strong><span class="total-pay">${element.price}</span></p>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
-                    <p><strong class="me-3">Tên dịch vụ:</strong><span class="service-name">...</span></p>
+                    <p><strong class="me-3">Hình thức thanh toán:</strong><span class="service-name">${element.typePay}</span></p>
                     <p><strong class="me-3">Thời gian đặt phòng:</strong><span class="booking-time">${element.dateTo}&nbsp;đến&nbsp;${element.dataLeave}</span></p>
                   </div>
               </div>

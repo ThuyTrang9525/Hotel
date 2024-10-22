@@ -145,6 +145,30 @@ function findUser(id){
 // Xác nhận tài khoang người đang dùng
 var user = findUser(getQueryParam('userId'));
 console.log(user)
+//hiện ẩn menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
+//Gắn key userId vào link các đường dẫn được chọn
+var listAHrefChange=document.querySelectorAll('.aHref');
+listAHrefChange.forEach(hreff=> {
+    const hrefAfter=hreff.getAttribute('href')+addUserIdOnmenu()
+    hreff.setAttribute('href',hrefAfter)
+})
+function addUserIdOnmenu(){
+    const beHaft ="?userId="+user.id;
+    return beHaft;
+}
+//
 pushInHistory();
 // hàm đẩy thông tin các phòng đã đặt từ giỏ hàng vào trang tanh toán
 function pushInHistory(){
@@ -180,33 +204,42 @@ function thanhtoan(){
     const pay1=document.getElementById('pay1');
     const pay2 =document.getElementById('pay2');
     if ((pay1.checked)||(pay2.checked)){
-        user.history=user.history.concat(user.book);
-    user.book.forEach(bo => {
-        rooms.forEach(room => {
-            if(room.id==bo.idRoom){
-                //room.isbook=true;
-                //đảy thời gian
-                room.time=room.time.concat(tachThoiGian(bo.dateTo,bo.dataLeave))
-                sortDate(room.time)
-            }
-        });
-    });
-    user.book=[];
-    users.forEach(objec => {
-        if(objec.id==user.id){
-            objec=user;
+        if(pay1.checked){
+            user.book.forEach(book=> {
+                book.typePay=pay1.value;
+            })
+        }else{
+            user.book.forEach(book=> {
+                book.typePay=pay2.value;
+            })
         }
-    })
-    localStorage.setItem('users',JSON.stringify(users));
-    localStorage.setItem('rooms',JSON.stringify(rooms));
-    alert("đã thanh toán");
-    //chuyển trang
-    const beHaft ="HTML/home.html?userId="+user.id;
-    const url = new URL (beHaft,window.location.origin);
-    window.location.href=url.toString();
-    //email(chưa thanh toán)
-    console.log(user)
-    console.log(rooms)
+        user.history=user.history.concat(user.book);
+        user.book.forEach(bo => {
+            rooms.forEach(room => {
+                if(room.id==bo.idRoom){
+                    //room.isbook=true;
+                    //đảy thời gian
+                    room.time=room.time.concat(tachThoiGian(bo.dateTo,bo.dataLeave))
+                    sortDate(room.time)
+                }
+            });
+        });
+        user.book=[];
+        users.forEach(objec => {
+            if(objec.id==user.id){
+                objec=user;
+            }
+        })
+        localStorage.setItem('users',JSON.stringify(users));
+        localStorage.setItem('rooms',JSON.stringify(rooms));
+        alert("đã thanh toán");
+        //chuyển trang
+        const beHaft ="HTML/home.html?userId="+user.id;
+        const url = new URL (beHaft,window.location.origin);
+        window.location.href=url.toString();
+        //email(chưa thanh toán)
+        console.log(user)
+        console.log(rooms)
     }else{
         alert("Chọn hình thức thanh toán")
     }

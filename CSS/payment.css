@@ -35,7 +35,7 @@ body{
     margin: 0 0 0 39px;
 }
 .paraName{
-    width: 100px;
+    width: 80px;
     padding: 0;
     font-weight: 400;
     font-size: 16px;
@@ -72,6 +72,11 @@ body{
 .flex-box{
    display: flex;
 }
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .flex-flex-non-box{
     flex: 1;
     display: flex;
@@ -86,13 +91,14 @@ body{
 .inputInfo{
     flex: 1;
     height: 23px;
+    border: none;
 }
 .boxServiceNon{
     display: flex;
     width: 200px;
-    position: relative;
     margin-right: 40px;
     align-items: center;
+    position: relative;
 }
 .boxButton{
     width: 800px;
@@ -113,19 +119,20 @@ body{
 }
 .custom-radio {
     border-radius: 10px;
-    border: 2px solid black;
-    padding: 10px 20px;
+    border: 1px solid black;
+    padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 #pay1:checked  + .custom-radio,#pay2:checked + .custom-radio{
-    background-color:chartreuse;
+    background-color:rgb(180, 135, 22);
+    color: white;
 }
 button{
-    padding: 10px;
-    background-color: blue;
+    padding: 5px 10px;
+    background-color: rgb(6, 6, 116);
     color: white;
-    font-size: 45px;
+    font-size: 25px;
     border-radius: 10px;
     border: none;
 }
