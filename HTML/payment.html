@@ -25,16 +25,17 @@
           <div class="d-flex align-items-center">
             <div class="d-flex align-items-center me-4">
               <a href="javascript:void(0)" id="book-room" class="text-decoration-none">
-                <i class="fa-solid fa-house me-1" style="font-size: 24px;" >Thuê phòng khách sạn</i> </a>
+                <i class="fa-solid fa-house me-1" style="font-size: 24px;"></i> 
+                Thuê phòng khách sạn</a>
             </div>
-            <a href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
+            <a id="c-logIn" href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="bi bi-person-circle me-2" style="font-size: 24px;"></i> 
               Đăng nhập
             </a>
-            <a href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
+            <a id="c-register" href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="fa fa-registered me-2" style="font-size:24px"></i>
               Đăng kí</a>
-            <div class="d-flex align-items-center me-4">
+            <div id="c-profile" class="d-flex align-items-center me-4">
               <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
               <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
             </div>
@@ -47,8 +48,8 @@
     </header>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a class="aHref" href="/HTML/home.html">Trang chủ</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
+          <li class="breadcrumb-item"><a class="aHref" href="/HTML/search.html">Trang tìm kiếm</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Trang thanh toán</li>
         </ol>
     </nav>
     <p class=" textTemplate title">Đặt phòng khách sạn</p>
@@ -59,17 +60,17 @@
                 <div class="flex-box ex-in">
                     <div class="flex-flex-non-box">
                         <p class="textTemplate paraName">Tên:</p>
-                        <input type="text" class="inputInfo" id="nameCus">
+                        <input type="text" class="inputInfo" id="nameCus" readonly>
                     </div>
                     <div class="flex-flex-non-box">
                         <p class="textTemplate paraName">SĐT:</p>
-                        <input type="text" class="inputInfo" id="phoneCus">
+                        <input type="text" class="inputInfo" id="phoneCus" readonly>
                     </div>
                 </div>
                 <div class="flex-box">
                     <div class="flex-flex-non-box">
                         <p class="textTemplate paraName">Địa chỉ:</p>
-                        <input type="text" class="inputInfo" id="addressCus">
+                        <input type="text" class="inputInfo" id="addressCus" readonly>
                     </div>
                 </div>
             </div>
@@ -80,19 +81,19 @@
                     <p class="paraResultBook weight" id="nameRoom"></p>
                 </div>
                 <div class="flex-box">
-                    <p class="paraName distance4" >Giờ nhận phòng:</p>
+                    <p class="paraName distance4" >Ngày nhận phòng:</p>
                     <p class="paraResultBook weight" id="dateGiveRoom"></p>
                 </div>
                 <div class="flex-box">
-                    <p class="paraName distance4">Giờ trả phòng:</p>
+                    <p class="paraName distance4">Ngày trả phòng:</p>
                     <p class="paraResultBook weight" id="datePayRoom"></p>
                 </div>
-                <div class="flex-box">
+                <!--<div class="flex-box">
                     <p class="paraName distance4">Số khách ở:</p>
                     <p class="paraResultBook weight" id="numberCusOfRoom">4 khách</p>
-                </div>
+                </div>-->
             </div>
-            <p class="textTemplate title-non">Dịch vụ khách sạn</p>
+            <!--<p class="textTemplate title-non">Dịch vụ khách sạn</p>-->
             <div class="boxService" id="boxService">
                 <!--<div class="boxServiceNon">
                     <input type="checkbox" name="se1" id="se1" value="15000">
@@ -163,18 +164,18 @@
                 </div>
             </div>
             <p class="textTemplate title-non">Trả bằng</p>
-            <div class="box2 flex-box">
-                <label class="boxServiceNon">
-                    <input type="radio" name="pay" id="pay1">
-                    <span class="custom-radio">Tiền mặt</span>
+            <div class="box2 flex-center" >
+                <label class="boxServiceNon" >
+                    <input type="radio" name="pay" id="pay1" value="Trực tiếp">
+                    <span class="custom-radio">Trực tiếp</span>
                 </label>
-                <label class="boxServiceNon distance3">
-                    <input type="radio" name="pay" id="pay2">
-                    <span class="custom-radio">Thanh toán bằng Ngân hàng</span>
+                <label class="boxServiceNon " >
+                    <input type="radio" name="pay" id="pay2" value="Qua web">
+                    <span class="custom-radio">Qua web</span>
                 </label>
             </div>
             <div class="boxButton">
-                <button type="button" class="textTemplate" onclick="thanhtoan()">Đặt phòng</button>
+                <button style="padding: 5px 10px;" type="button" class="textTemplate title-non" onclick="thanhtoan()">Đặt phòng</button>
             </div>
         </form>
     </div>

@@ -6,7 +6,6 @@ next.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').appendChild(items[0])
 })
-
 prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) 
@@ -81,6 +80,19 @@ if(users.length>0&&getQueryParam('userId')){
     //Tạo một user giả
     user=userFake;
 }
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {
@@ -146,9 +158,9 @@ search.addEventListener('click', function(){
     console.log(today)
     const checkOutDate = new Date(checkOutInput.value);
     if(today>checkInDate||checkInDate>checkOutDate){
-        document.getElementById('addd').innerHTML="Nhập đúng ngày, chúng tôi chỉ hỗ trợ từ đây tới 3 năm"
+        document.getElementById('addd').innerHTML="Nhập đúng ngày, chúng tôi chỉ hỗ trợ từ bây giờ tới 3 năm tới"
     }else{
-        if(day>0&&day<4){
+        if(day>0&&day<6){
             alert("Tìm kiếm");
             users.forEach(u => {
                 if(u.id==user.id){
@@ -157,10 +169,8 @@ search.addEventListener('click', function(){
             })
             //kiểm tra xem có key có userId và có danh sách các users không
             if(getQueryParam('userId')&&users.length>0){
-                alert("thành công")
                 localStorage.setItem('users',JSON.stringify(users))
             }
-            console.log(user)
             const beHaft ="HTML/search.html?userId="+user.id+"&day1="+checkInInput.value+"&day2="+checkOutInput.value+keyTypeRoom;
             const url = new URL (beHaft,window.location.origin);
             window.location.href=url.toString();

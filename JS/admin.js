@@ -2,7 +2,6 @@ let rooms = [];
 let deleteIndex = null;
 let nextId = 1; 
 let editIndex = null;
-
 // Hàm lưu dữ liệu phòng lên local storage
 function saveRoomsToLocalStorage() {
     localStorage.setItem('rooms', JSON.stringify(rooms));
@@ -116,8 +115,13 @@ function saveOrUpdateRoom(name,type, price, bedType, area, view, amenities, imag
         rooms[editIndex] = { ...rooms[editIndex], name,type, price, bedType, area, view, amenities, image };
         editIndex = null;
     } else {
+        if(rooms.length==0){
+            nextId=1;
+        }else{
+            nextId=findNum()
+        }
         const newRoom = {
-            id:"r"+ nextId++,
+            id:"r"+ nextId,
             name,
             type,
             price,
@@ -136,7 +140,15 @@ function saveOrUpdateRoom(name,type, price, bedType, area, view, amenities, imag
     toggleForm();
     saveRoomsToLocalStorage();
 }
-
+//Hàm tìm room
+function findNum(){
+    //vd rooms[0].id="u1",rooms[1].id="u2"
+    let idRoom=rooms[(rooms.length-1)].id;
+    let numString = idRoom.substring(1);
+    let nu=parseInt(numString);
+    nu=nu+1;
+    return nu
+}
 // Hàm hiển thị modal xác nhận xóa
 function showDeleteModal(index) {
     deleteIndex = index;

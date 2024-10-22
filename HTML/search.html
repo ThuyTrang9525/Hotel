@@ -27,14 +27,14 @@
                 <i class="fa-solid fa-house me-1" style="font-size: 24px;"></i> 
                 Thuê phòng khách sạn</a>
             </div>
-            <a  href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
+            <a id="c-logIn"  href="/HTML/login.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="bi bi-person-circle me-2" style="font-size: 24px;"></i> 
               Đăng nhập
             </a>
-            <a href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
+            <a id="c-register" href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
               <i class="fa fa-registered me-2" style="font-size:24px"></i>
               Đăng kí</a>
-            <div class="d-flex align-items-center me-4">
+            <div id="c-profile" class="d-flex align-items-center me-4">
               <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
               <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
             </div>
@@ -68,8 +68,8 @@
                         <div>
                             <p style=" display:flex; align-items:center"><i class="fa fa-filter"></i>Lọc theo</p>
                             <ul class="typeFilter">
-                                <li class="typePrice"><p>giá</p></li>
-                                <li class="typeRoom"><p>loại phòng</p></li>
+                                <li class="typePrice"><p>Giá</p></li>
+                                <li class="typeRoom"><p>Loại phòng</p></li>
                             </ul>
                         </div>
                     </div>
@@ -77,12 +77,12 @@
                         <p class="textTemplate text2">Khoảng giá</p>
                         <div class="boxFilterPrice">
                             <div class="boxPrice">
-                                <p class="textTemplate text3">tối thiểu</p>
+                                <p class="textTemplate text3">Tối thiểu</p>
                                 <input type="text" class="" id="minPrice">
                             </div>
                             <p>-</p>
                             <div class="boxPrice">
-                                <p class="textTemplate text3">tối đa</p>
+                                <p class="textTemplate text3">Tối đa</p>
                                 <input type="text" class="" id="maxPrice">
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                         
                     </div>  
                     <div class="boxStatusBookRoom">
-                        <div style="margin-left: 10px;">
+                        <div style="margin-left: 10px;margin-right:10px;">
                             <p class="textTemplate text1 weight2" style="border-bottom: 1px solid black;">Thông tin đặt phòng</p>
                             <div style="border-bottom: 1px solid black">
                                 <p class="textTemplate text1 weight2">Tên khách sạn</p>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="statusInforBook" style="border-bottom:1px solid black;">
                                 <p class="textTemplate text1 weight2">Thông tin phòng</p>
-                                <div id="doingBook" style="background-color: antiquewhite;">
+                                <div id="doingBook">
                                 </div>
                             </div>
                             <p>Tổng:&nbsp; <span id="notTotolBook">0</span>&nbsp;&nbsp;vnđ</p>
