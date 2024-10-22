@@ -87,10 +87,12 @@ body p{
 .boxStatusBookRoom{
     width: 300px;
     max-height: max-content;
-    background-color: aqua;
+    background-color: inherit;
     position: sticky;
     top:150px;
     margin: 0 20px;
+    padding-bottom: 10px;
+    box-shadow:0.5px 0.5px 2px 2.5px rgba(1, 1, 1, 0.2);
 }
 .boxFlex{
     display: flex;
@@ -137,7 +139,7 @@ body p{
     float: right;
 }
 .seButton{
-    background-color: blue;
+    background-color: rgb(6, 6, 116);
     color: white;
     border: none;
     border-radius: 5px;
@@ -145,7 +147,7 @@ body p{
     color: 19px;
 }
 .buttonChoseRoom{
-    background-color: blue;
+    background-color: rgb(6, 6, 116);
     color: white;
     border: none;
     border-radius: 5px;
@@ -167,7 +169,6 @@ body p{
 .image{
     width: 35%;
     height: 150px;
-    background-color: aqua;
 }
 .image img{
     width: 100%;
@@ -176,12 +177,12 @@ body p{
 .boxRoomNon{
     flex: 1;
     display: flex;
+    background-color: rgb(247, 247, 247);
 }
 .boxRoomFlexNon{
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: white;
 }
 .boxRoomFlexNon div{
     flex: 1;
@@ -227,16 +228,16 @@ body p{
 #doingBook{
     max-height: 100px;
     overflow-y: auto;
-    background-color: yellow;
 }
 .containNonBook{
     margin-bottom: 10px;
 }
 .containNonBook:hover {
-    background-color: yellow;
+    /* */
+    background-color: rgb(209, 209, 209);
 }
 .numRoomChoseBook{
-    width: 270px;
+    width: 260px;
 }
 .breadcrumb {
     background-color: transparent;

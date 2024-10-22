@@ -11,6 +11,11 @@ function togglePassword(fieldId) {
 } 
 // lấy users từ local
 var users = JSON.parse(localStorage.getItem('users')) || [];
+//Hiện và ẩn phần trên menu
+document.getElementById('c-logIn').classList.remove('d-none');
+document.getElementById('c-register').classList.remove('d-none');
+document.getElementById('c-profile').classList.add('d-none');
+//
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
     const password = document.getElementById('password').value;
@@ -55,6 +60,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
                     password: document.getElementById('password').value,
                     history:[],
                     book:[],
+                    rule:2,
                     };
                 // Lưu dữ liệu người dùng vào localStorage
                 users.push(user);
