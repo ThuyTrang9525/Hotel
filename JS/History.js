@@ -41,6 +41,19 @@ if(!getQueryParam('userId')){
 }else{
     user=findUser(getQueryParam('userId'));
 }
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {

@@ -77,12 +77,25 @@ function findUser(id){
 var users=getUsersFromLocalStorage();
 var user=""
 console.log(getQueryParam('userId'))
-if(!getQueryParam('userId')){
+if(!getQueryParam('userId')||getQueryParam('userId')==""){
     user=userFake
     alert("bạn chưa đăng nhập")
 }else{
     user=findUser(getQueryParam('userId'));
     showInforUser();
+}
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
 }
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
@@ -112,8 +125,8 @@ function enableEdit(){
 //Hàm đăng xuất
 function logout(){
     if(getQueryParam('userId')&&user!=""){
-        user="";
-        let beHaft =window.location.href;
+        user=userFake;
+        let beHaft ="HTML/Profile.html";
         beHaft=beHaft+"?userId="
         const url = new URL (beHaft,window.location.origin);
         window.location.href=url.toString();
@@ -185,3 +198,4 @@ function showInforUser(){
     })
     //
 }
+document.addEventListener('DOMContentLoaded',hienAnMenu())

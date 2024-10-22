@@ -145,6 +145,30 @@ function findUser(id){
 // Xác nhận tài khoang người đang dùng
 var user = findUser(getQueryParam('userId'));
 console.log(user)
+//hiện ẩn menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
+//Gắn key userId vào link các đường dẫn được chọn
+var listAHrefChange=document.querySelectorAll('.aHref');
+listAHrefChange.forEach(hreff=> {
+    const hrefAfter=hreff.getAttribute('href')+addUserIdOnmenu()
+    hreff.setAttribute('href',hrefAfter)
+})
+function addUserIdOnmenu(){
+    const beHaft ="?userId="+user.id;
+    return beHaft;
+}
+//
 pushInHistory();
 // hàm đẩy thông tin các phòng đã đặt từ giỏ hàng vào trang tanh toán
 function pushInHistory(){

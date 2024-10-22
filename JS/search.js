@@ -132,10 +132,22 @@ function findUser(id){
 }
 //Xac nhận filter trước khi hiện nội dung
 var beFilter=getQueryParam('type');
-console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
 var users= getUsersFromLocalStorage();
 var user = findUser(getQueryParam('userId'));
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {
@@ -201,7 +213,6 @@ function showResultRooms(){
     listRoom.forEach(room =>{
         const linkdetailFake ="HTML/detailsroom.html?id="+room.id
         const linkDetail = new URL (linkdetailFake,window.location.origin);
-        console.log(room.image)
         add.innerHTML+=
         `<div class="boxRoom">
                 <div class="image">
@@ -277,7 +288,7 @@ function addEvetChoseButton(){
         chose.style.backgroundColor ="rgb(6, 6, 116)";//Màu ban đầu
         chose.innerHTML="Chọn"
     }else{
-        chose.style.backgroundColor ="rgb(180, 135, 22)";//Màu bỏ chon
+        chose.style.backgroundColor ="#CC8C18";//Màu bỏ choncolor: #CC8C18
             chose.innerHTML="Bỏ chọn"
     }
     chose.addEventListener('click',function(){
@@ -292,7 +303,7 @@ function addEvetChoseButton(){
                     typePay:"",
                 }
                 user.book.push(faker);
-                chose.style.backgroundColor ="rgb(180, 135, 22)";
+                chose.style.backgroundColor ="#CC8C18";
                 chose.innerHTML="Bỏ chọn"
                 chose.dataset.type="false";
             }else{
