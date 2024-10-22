@@ -1,100 +1,107 @@
 // Tìm kiếm và hiển thị tiện ích đã chọn khi nhấn tìm kiếm
-    document.addEventListener("DOMContentLoaded", function() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const searchButton = document.querySelector('.btn-search');
-        
-        function filterAmenities() {
-       
-            const amenities = document.querySelectorAll('.col-md-6');
+document.addEventListener("DOMContentLoaded", function() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const searchButton = document.querySelector('.btn-search');
+    const selectAllCheckbox = document.getElementById('all');
 
-            let selectedFilters = [];
+    function filterAmenities() {
+        const amenities = document.querySelectorAll('.col-md-6');
+        let selectedFilters = [];
 
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedFilters.push(checkbox.value);
-                }
-            });
-
-            if (selectedFilters.length === 0) {
-                amenities.forEach(amenity => {
-                    amenity.style.display = 'block';
-                });
-                return;
-            }
-
+        // Kiểm tra nếu chọn tất cả
+        if (selectAllCheckbox.checked) {
             amenities.forEach(amenity => {
-                const amenityType = amenity.getAttribute('data-type');
-
-                if (selectedFilters.includes(amenityType)) {
-                    amenity.style.display = 'block'; // Show matching amenity
-                } else {
-                    amenity.style.display = 'none'; // Hide non-matching amenity
-                }
+                amenity.style.display = 'block'; // Show all amenities
             });
+            return;
         }
 
-        searchButton.addEventListener('click', filterAmenities);
-    });
-//  HIỂN THỊ FORM ĐẶT
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedFilters.push(checkbox.value);
+            }
+        });
 
-function openBookingForm(serviceName) {
-    // Hiển thị dịch vụ được chọn
-    document.getElementById('selectedService').textContent = "Dịch vụ: " + serviceName;
+        if (selectedFilters.length === 0) {
+            amenities.forEach(amenity => {
+                amenity.style.display = 'block';
+            });
+            return;
+        }
 
-    // Hiển thị overlay và form đặt tiện ích
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('bookingForm').style.display = 'block';
-}
+        amenities.forEach(amenity => {
+            const amenityType = amenity.getAttribute('data-type');
 
-// Hàm đóng form đặt tiện ích
-function closeBookingForm() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('bookingForm').style.display = 'none';
-}
-
-// Hàm xác nhận đặt chỗ
-function confirmBooking() {
-    // Lấy thông tin dịch vụ đã chọn và thời gian sử dụng
-    var serviceName = document.getElementById('selectedService').textContent;
-    var usageTime = document.getElementById('usageTime').value;
-
-    // Kiểm tra xem người dùng đã chọn thời gian chưa
-    if (usageTime === "") {
-        alert("Vui lòng chọn thời gian sử dụng.");
-        return;
+            if (selectedFilters.includes(amenityType)) {
+                amenity.style.display = 'block'; // Show matching amenity
+            } else {
+                amenity.style.display = 'none'; // Hide non-matching amenity
+            }
+        });
     }
 
-    // Tạo đối tượng lưu thông tin đặt chỗ
-    var booking = {
-        service: serviceName,
-        time: usageTime
-    };
-
-    // Lấy dữ liệu từ localStorage nếu đã có, hoặc tạo mảng mới nếu chưa có
-    var bookingHistory = JSON.parse(localStorage.getItem('bookingHistory')) || [];
-
-    // Thêm đặt chỗ mới vào mảng lịch sử đặt chỗ
-    bookingHistory.push(booking);
-
-    // Lưu lại dữ liệu vào localStorage
-    localStorage.setItem('bookingHistory', JSON.stringify(bookingHistory));
-
-    // Thông báo người dùng
-    alert("Đặt chỗ thành công!");
-
-    // Đóng form
-    closeBookingForm();
-}
-
-function closeBookingForm() {
-    document.getElementById('bookingForm').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-}
-
-
-document.querySelectorAll('.book-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const serviceName = this.getAttribute('data-service-name');
-        openBookingForm(serviceName);
-    });
+    searchButton.addEventListener('click', filterAmenities);
 });
+
+// // HIỂN THỊ FORM ĐẶT
+// let selectedPrice = 0; // Biến toàn cục lưu trữ giá dịch vụ
+
+// function openBookingForm(serviceName, price) {
+//     // Hiển thị dịch vụ được chọn và giá
+//     document.getElementById('selectedService').textContent = "Dịch vụ: " + serviceName;
+//     document.getElementById('servicePrice').textContent = "Giá: " + price; // Hiển thị giá trong form
+
+//     selectedPrice = price; // Lưu giá vào biến toàn cục
+//     document.getElementById('bookingForm').style.display = 'block';
+// }
+
+// // Hàm đóng form đặt tiện ích
+// function closeBookingForm() {   
+//     document.getElementById('bookingForm').style.display = 'none';
+// }
+
+// // Hàm xác nhận đặt chỗ
+// function confirmBooking() {
+//     // Lấy thông tin dịch vụ đã chọn và thời gian sử dụng
+//     var serviceName = document.getElementById('selectedService').textContent.replace("Dịch vụ: ", "").trim();
+//     var usageDate= document.getElementById('usageDate').value;
+//     var usageTime = document.getElementById('usageTime').value;
+
+//     // Kiểm tra xem người dùng đã chọn thời gian chưa
+//     if (usageTime === "" || usageDate === "") {
+//         alert("Vui lòng chọn thời gian sử dụng.");
+//         return;
+//     }
+
+//     // Tạo đối tượng lưu thông tin đặt chỗ
+//     var booking = {
+//         service: serviceName,
+//         date: usageDate,
+//         time: usageTime,
+//         price: selectedPrice // Sử dụng giá đã lưu
+//     };
+
+//     // Lấy dữ liệu từ localStorage nếu đã có, hoặc tạo mảng mới nếu chưa có
+//     var bookingHistory = JSON.parse(localStorage.getItem('bookingHistory')) || [];
+
+//     // Thêm đặt chỗ mới vào mảng lịch sử đặt chỗ
+//     bookingHistory.push(booking);
+
+//     // Lưu lại dữ liệu vào localStorage
+//     localStorage.setItem('bookingHistory', JSON.stringify(bookingHistory));
+
+//     // Thông báo người dùng
+//     alert("Đặt chỗ thành công!");
+    
+//     // Đóng form sau khi đặt chỗ thành công
+//     closeBookingForm();
+// }
+
+// // Gán sự kiện cho nút đặt tiện ích
+// document.querySelectorAll('.book-btn').forEach(button => {
+//     button.addEventListener('click', function() {
+//         const serviceName = this.getAttribute('data-service-name');
+//         const price = this.getAttribute('data-price');
+//         openBookingForm(serviceName, price); // Gọi hàm mở form và truyền tên dịch vụ và giá
+//     });
+// });
