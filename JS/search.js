@@ -132,10 +132,22 @@ function findUser(id){
 }
 //Xac nhận filter trước khi hiện nội dung
 var beFilter=getQueryParam('type');
-console.log(beFilter)
 // Xác nhận tài khoang người đang dùng
 var users= getUsersFromLocalStorage();
 var user = findUser(getQueryParam('userId'));
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {
@@ -197,13 +209,14 @@ function showResultRooms(){
     //in ra trang web
     let add =document.getElementById('boxResult');
     add.innerHTML ="";
+    //"/IMAGE/doubleBed1.webp"
     listRoom.forEach(room =>{
         const linkdetailFake ="HTML/detailsroom.html?id="+room.id
         const linkDetail = new URL (linkdetailFake,window.location.origin);
         add.innerHTML+=
         `<div class="boxRoom">
                 <div class="image">
-                    <img src="/IMAGE/doubleBed1.webp" alt="image">
+                    <img src="${room.image}" alt="image">
                 </div>
                 <div class="boxRoomNon">
                     <div class="boxRoomFlexNon">
@@ -211,7 +224,7 @@ function showResultRooms(){
                         <div class="roomNon"><p class="textTemplate text3"> <i class="fas fa-user-friends"></i>2 người</p></div>
                     </div>
                     <div class="boxRoomFlexNon">
-                        <div class="roomNon"><p class="textTemplate textA textColor">${room.price}</p></div>
+                        <div class="roomNon"><p class="textTemplate textA textColor">${changeMoney(room.price)}&nbsp;VNĐ</p></div>
                         <div class="roomNon"><button class="buttonChoseRoom" data-room-id="${room.id}" data-type="true">chọn</button></div>
                     </div>
                 </div>
@@ -233,7 +246,7 @@ function showRoomInBasket(){
             <div class="containNonBook">
                 <p class="numRoomChoseBook textTemplate text3 ">Phòng ${i} ${defiRoom.name}</p>
                 <div class="boxFlex fieldButtonOfchose">
-                    <p class="priceRoomChoseBook textTemplate text3 ">Giá ${defiRoom.price} vnđ/Ngày</p>
+                    <p class="priceRoomChoseBook textTemplate text3 ">Giá ${changeMoney(defiRoom.price)}&nbsp;VNĐ/Ngày</p>
                     <button class="deleteBookRoom" onclick="buttonDeleteRoom('${room.idRoom}')">X Xóa</button>
                 </div>
             </div>
@@ -259,7 +272,7 @@ function showMoney(){
     user.book.forEach(room =>{
         total +=parseInt(room.price)
     })
-    document.getElementById('notTotolBook').innerHTML=total;
+    document.getElementById('notTotolBook').innerHTML=changeMoney(total);
 }
 //Hàm chọn phòng vào giỏ hàng
 function addEvetChoseButton(){
@@ -272,10 +285,10 @@ function addEvetChoseButton(){
         chose.dataset.type="false";
     }
     if(chose.dataset.type=="true"){
-        chose.style.backgroundColor ="blue";
+        chose.style.backgroundColor ="rgb(6, 6, 116)";//Màu ban đầu
         chose.innerHTML="Chọn"
     }else{
-        chose.style.backgroundColor ="red";
+        chose.style.backgroundColor ="#CC8C18";//Màu bỏ choncolor: #CC8C18
             chose.innerHTML="Bỏ chọn"
     }
     chose.addEventListener('click',function(){
@@ -287,9 +300,10 @@ function addEvetChoseButton(){
                     dateTo:startDay1,
                     dataLeave:endDay1,
                     price: parseInt(room.price)*parseInt(numDay),
+                    typePay:"",
                 }
                 user.book.push(faker);
-                chose.style.backgroundColor ="red";
+                chose.style.backgroundColor ="#CC8C18";
                 chose.innerHTML="Bỏ chọn"
                 chose.dataset.type="false";
             }else{
@@ -297,7 +311,7 @@ function addEvetChoseButton(){
             }
         }else{
             user.book = user.book.filter(bo => bo.idRoom !== chose.dataset.roomId); 
-            chose.style.backgroundColor ="blue";
+            chose.style.backgroundColor ="rgb(6, 6, 116)";
             chose.innerHTML="Chọn"
             chose.dataset.type="true";
         }
@@ -460,4 +474,28 @@ function changeToPay(){
     }else{
         alert("Phải chọn ít nhất một phòng");
     }
+}
+//Hàm chuyển tiền
+function changeMoney(money){
+    let resultMoney=""
+    const StringMoney= money+"";
+    const num=StringMoney.length;
+    const num1=num/3|0;
+    if((num-num1*3)>0){
+        for(let i=0;i<(num-num1*3);i++){
+            if(i==(num-num1*3-1)){
+                resultMoney+=StringMoney.charAt(i)+".";
+            }else{
+                resultMoney+=StringMoney.charAt(i);
+            }
+        }
+    }
+    for(let i =0;i<num1*3;i++){
+        if((i+1)%3==0&&i!=(num1*3-1)){
+            resultMoney+=StringMoney.charAt(i+(num-num1*3))+".";
+        }else{
+            resultMoney+=StringMoney.charAt(i+(num-num1*3));
+        }
+    }
+    return resultMoney
 }

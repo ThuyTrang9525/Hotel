@@ -145,6 +145,30 @@ function findUser(id){
 // Xác nhận tài khoang người đang dùng
 var user = findUser(getQueryParam('userId'));
 console.log(user)
+//hiện ẩn menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
+//Gắn key userId vào link các đường dẫn được chọn
+var listAHrefChange=document.querySelectorAll('.aHref');
+listAHrefChange.forEach(hreff=> {
+    const hrefAfter=hreff.getAttribute('href')+addUserIdOnmenu()
+    hreff.setAttribute('href',hrefAfter)
+})
+function addUserIdOnmenu(){
+    const beHaft ="?userId="+user.id;
+    return beHaft;
+}
+//
 pushInHistory();
 // hàm đẩy thông tin các phòng đã đặt từ giỏ hàng vào trang tanh toán
 function pushInHistory(){
@@ -169,44 +193,53 @@ function pushInHistory(){
         payMoney.innerHTML+=`
             <div class="boxServiceNon distance2">
                 <p>${room1.name}</p>
-                <p class="paraResultServicePrice">${room.price} </p>
+                <p class="paraResultServicePrice">${changeMoney(room.price)}&nbsp;VNĐ </p>
             </div>
         `
     })
-    document.getElementById('totalPay').innerHTML= total;
+    document.getElementById('totalPay').innerHTML= changeMoney(total);
 }
 //hàm khi nhấn button(chưa hoàn thành)
 function thanhtoan(){
     const pay1=document.getElementById('pay1');
     const pay2 =document.getElementById('pay2');
     if ((pay1.checked)||(pay2.checked)){
-        user.history=user.history.concat(user.book);
-    user.book.forEach(bo => {
-        rooms.forEach(room => {
-            if(room.id==bo.idRoom){
-                //room.isbook=true;
-                //đảy thời gian
-                room.time=room.time.concat(tachThoiGian(bo.dateTo,bo.dataLeave))
-                sortDate(room.time)
-            }
-        });
-    });
-    user.book=[];
-    users.forEach(objec => {
-        if(objec.id==user.id){
-            objec=user;
+        if(pay1.checked){
+            user.book.forEach(book=> {
+                book.typePay=pay1.value;
+            })
+        }else{
+            user.book.forEach(book=> {
+                book.typePay=pay2.value;
+            })
         }
-    })
-    localStorage.setItem('users',JSON.stringify(users));
-    localStorage.setItem('rooms',JSON.stringify(rooms));
-    alert("đã thanh toán");
-    //chuyển trang
-    const beHaft ="HTML/home.html?userId="+user.id;
-    const url = new URL (beHaft,window.location.origin);
-    window.location.href=url.toString();
-    //email(chưa thanh toán)
-    console.log(user)
-    console.log(rooms)
+        user.history=user.history.concat(user.book);
+        user.book.forEach(bo => {
+            rooms.forEach(room => {
+                if(room.id==bo.idRoom){
+                    //room.isbook=true;
+                    //đảy thời gian
+                    room.time=room.time.concat(tachThoiGian(bo.dateTo,bo.dataLeave))
+                    sortDate(room.time)
+                }
+            });
+        });
+        user.book=[];
+        users.forEach(objec => {
+            if(objec.id==user.id){
+                objec=user;
+            }
+        })
+        localStorage.setItem('users',JSON.stringify(users));
+        localStorage.setItem('rooms',JSON.stringify(rooms));
+        alert("đã thanh toán");
+        //chuyển trang
+        const beHaft ="HTML/home.html?userId="+user.id;
+        const url = new URL (beHaft,window.location.origin);
+        window.location.href=url.toString();
+        //email(chưa thanh toán)
+        console.log(user)
+        console.log(rooms)
     }else{
         alert("Chọn hình thức thanh toán")
     }
@@ -229,4 +262,28 @@ var lister=tachThoiGian('2024-10-01','2024-10-04').concat('2024-11-15')
 //Hàm sắp xếp ngày từ bé đến lớn
 function sortDate(list){
     return list.sort((a, b) => new Date(a) - new Date(b));
+}
+//Hàm chuyển tiền
+function changeMoney(money){
+    let resultMoney=""
+    const StringMoney= money+"";
+    const num=StringMoney.length;
+    const num1=num/3|0;
+    if((num-num1*3)>0){
+        for(let i=0;i<(num-num1*3);i++){
+            if(i==(num-num1*3-1)){
+                resultMoney+=StringMoney.charAt(i)+".";
+            }else{
+                resultMoney+=StringMoney.charAt(i);
+            }
+        }
+    }
+    for(let i =0;i<num1*3;i++){
+        if((i+1)%3==0&&i!=(num1*3-1)){
+            resultMoney+=StringMoney.charAt(i+(num-num1*3))+".";
+        }else{
+            resultMoney+=StringMoney.charAt(i+(num-num1*3));
+        }
+    }
+    return resultMoney
 }

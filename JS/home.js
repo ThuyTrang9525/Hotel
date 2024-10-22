@@ -6,7 +6,6 @@ next.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').appendChild(items[0])
 })
-
 prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]) 
@@ -81,6 +80,19 @@ if(users.length>0&&getQueryParam('userId')){
     //Tạo một user giả
     user=userFake;
 }
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
+}
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
 listAHrefChange.forEach(hreff=> {
@@ -146,9 +158,9 @@ search.addEventListener('click', function(){
     console.log(today)
     const checkOutDate = new Date(checkOutInput.value);
     if(today>checkInDate||checkInDate>checkOutDate){
-        document.getElementById('addd').innerHTML="Nhập đúng ngày, chúng tôi chỉ hỗ trợ từ đây tới 3 năm"
+        document.getElementById('addd').innerHTML="Nhập đúng ngày, chúng tôi chỉ hỗ trợ từ bây giờ tới 3 năm tới"
     }else{
-        if(day>0&&day<4){
+        if(day>0&&day<6){
             alert("Tìm kiếm");
             users.forEach(u => {
                 if(u.id==user.id){
@@ -157,10 +169,8 @@ search.addEventListener('click', function(){
             })
             //kiểm tra xem có key có userId và có danh sách các users không
             if(getQueryParam('userId')&&users.length>0){
-                alert("thành công")
                 localStorage.setItem('users',JSON.stringify(users))
             }
-            console.log(user)
             const beHaft ="HTML/search.html?userId="+user.id+"&day1="+checkInInput.value+"&day2="+checkOutInput.value+keyTypeRoom;
             const url = new URL (beHaft,window.location.origin);
             window.location.href=url.toString();
@@ -190,4 +200,66 @@ function calculateRentalDays() {
         rentalDaysInput.value = days > 0 ? days : 0;
         day=days;
     }
+}
+
+
+//vong lap de hien ra ngay
+document.addEventListener("DOMContentLoaded", function() {
+    function countdownTimer() {
+        const now = new Date();
+        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+        const timeRemaining = endOfDay - now;
+
+        const seconds = Math.floor((timeRemaining / 1000) % 60);
+        const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+        const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+        if (timeRemaining < 0) {
+            document.getElementById('days').textContent = "00";
+            document.getElementById('hours').textContent = "00";
+            document.getElementById('minutes').textContent = "00";
+            document.getElementById('seconds').textContent = "00";
+            clearInterval(timerInterval);
+        }
+    }
+
+    const timerInterval = setInterval(countdownTimer, 1000);
+    countdownTimer();
+});
+
+
+
+//footer 
+    function subscribe() {
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailPattern.test(email)) {
+            message.textContent = 'Thank you for subscribing with email: ' + email;
+            message.style.color = '#d4a017';
+        } else {
+            message.textContent = 'Please enter a valid email address.';
+            message.style.color = 'red';
+        }
+    }
+// Map
+function openDirections() {
+    window.open('https://www.google.com/maps/dir/?api=1&destination=16.061473787794288,108.2402975694859', '_blank');
+}
+
+function openInMaps() {
+    window.open('https://www.google.com/maps/place/16.061473787794288,108.2402975694859', '_blank');
+}
+
+function shareLocation() {
+    const url = `https://www.google.com/maps/place/16.061473787794288,108.2402975694859`;
+    navigator.clipboard.writeText(url).then(() => {
+        alert('Đường dẫn đã được sao chép vào clipboard!');
+    });
 }

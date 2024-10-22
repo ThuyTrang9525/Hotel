@@ -1,33 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const daySelect = document.getElementById('day');
-    const monthSelect = document.getElementById('month');
-    const yearSelect = document.getElementById('year');
-
-    // Thêm các ngày
-    for (let i = 1; i <= 31; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = i;
-        daySelect.appendChild(option);
-    }
-
-    // Thêm các tháng
-    for (let i = 1; i <= 12; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = i;
-        monthSelect.appendChild(option);
-    }
-    // Thêm các năm (giả sử từ 1900 đến năm hiện tại)
-    const currentYear = new Date().getFullYear();
-    for (let i = 1950; i <= currentYear; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = i;
-        yearSelect.appendChild(option);
-    }
-});
-
+const daySelect = document.getElementById('day');
+const monthSelect = document.getElementById('month');
+const yearSelect = document.getElementById('year');
+// Thêm các ngày
+for (let i = 1; i <= 31; i++) {
+    let iAfter=i+"";
+    const option = document.createElement('option');
+    option.value = String(iAfter.padStart(2,'0'));
+    option.textContent = String(iAfter.padStart(2,'0'));;
+    daySelect.appendChild(option);
+}
+// Thêm các tháng
+for (let i = 1; i <= 12; i++) {
+    let iAfter=i+"";
+    const option = document.createElement('option');
+    option.value = String(iAfter.padStart(2,'0'));
+    option.textContent = String(iAfter.padStart(2,'0'));;
+    monthSelect.appendChild(option);
+}
+// Thêm các năm (giả sử từ 1900 đến năm hiện tại)
+const currentYear = new Date().getFullYear();
+for (let i = 1950; i <= currentYear; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    yearSelect.appendChild(option);
+}
 // Hàm khi bấm vào nút "Chỉnh sửa"
 function enableEdit() {
     // Hiển thị nút "Lưu Thông Tin"
@@ -80,12 +77,25 @@ function findUser(id){
 var users=getUsersFromLocalStorage();
 var user=""
 console.log(getQueryParam('userId'))
-if(!getQueryParam('userId')){
+if(!getQueryParam('userId')||getQueryParam('userId')==""){
     user=userFake
     alert("bạn chưa đăng nhập")
 }else{
     user=findUser(getQueryParam('userId'));
     showInforUser();
+}
+//Hiện và ẩn phần trên menu
+hienAnMenu();
+function hienAnMenu(){
+    if(user.id!=""&&user.id){
+        document.getElementById('c-logIn').classList.add('d-none')
+        document.getElementById('c-register').classList.add('d-none')
+        document.getElementById('c-profile').classList.remove('d-none');
+    }else{
+        document.getElementById('c-logIn').classList.remove('d-none');
+        document.getElementById('c-register').classList.remove('d-none');
+        document.getElementById('c-profile').classList.add('d-none');
+    }
 }
 //Gắn key userId vào link các đường dẫn được chọn
 var listAHrefChange=document.querySelectorAll('.aHref');
@@ -107,12 +117,16 @@ function enableEdit(){
         inpu.readOnly =false;
     })
     showInforUser();
+    let listSelect=document.querySelectorAll('.input2');
+    listSelect.forEach(ele=>{
+        ele.disabled=false;
+    })
 }
 //Hàm đăng xuất
 function logout(){
     if(getQueryParam('userId')&&user!=""){
-        user="";
-        let beHaft =window.location.href;
+        user=userFake;
+        let beHaft ="HTML/Profile.html";
         beHaft=beHaft+"?userId="
         const url = new URL (beHaft,window.location.origin);
         window.location.href=url.toString();
@@ -130,6 +144,12 @@ function saveUserInfo(){
     }else{
         user.gender="female"
     }
+    let dayBob=document.getElementById('day').value;
+    let month =document.getElementById('month').value;
+    let year=document.getElementById('year').value;
+    let date=year+"-"+month+"-"+dayBob;
+    console.log(date)
+    user.dob=date
     const buttonInputs=document.querySelectorAll('.input');
     buttonInputs.forEach(inpu => {
         inpu.readOnly =true;
@@ -161,5 +181,21 @@ function showInforUser(){
         document.getElementById('pfr-female').checked = true;
     }
     //thiếu ngày sinh
+    let dob=user.dob;
+    console.log(dob)
+    let changeDob= new Date(dob);
+    console.log(changeDob)
+    console.log(changeDob.getFullYear())
+    let yearDob = changeDob.getFullYear();
+    let monthDob = String(changeDob.getMonth() + 1).padStart(2, '0');
+    let dateDob = String(changeDob.getDate()).padStart(2, '0');
+    document.getElementById('day').value=dateDob;
+    document.getElementById('month').value=monthDob;
+    document.getElementById('year').value=yearDob;
+    let listSelect=document.querySelectorAll('.input2');
+    listSelect.forEach(ele=>{
+        ele.disabled=true;
+    })
     //
 }
+document.addEventListener('DOMContentLoaded',hienAnMenu())
