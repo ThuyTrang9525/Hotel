@@ -202,7 +202,7 @@ function showResultRooms(){
                         <div class="roomNon"><p class="textTemplate text3"> <i class="fas fa-user-friends"></i>2 người</p></div>
                     </div>
                     <div class="boxRoomFlexNon">
-                        <div class="roomNon"><p class="textTemplate textA textColor">${room.price}</p></div>
+                        <div class="roomNon"><p class="textTemplate textA textColor">${changeMoney(room.price)}</p></div>
                         <div class="roomNon"><button class="buttonChoseRoom" data-room-id="${room.id}" data-type="true">chọn</button></div>
                     </div>
                 </div>
