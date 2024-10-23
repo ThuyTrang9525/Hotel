@@ -1,35 +1,47 @@
+// Lấy ID từ URL
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 console.log(id);
-function getRoomsFromLocalStorage(){
-    const products =JSON.parse(localStorage.getItem('rooms'));
-    if(!products){
-        return [];
-    }
-    else{
-        return products;
-    }
+
+// Hàm lấy dữ liệu phòng từ localStorage
+function getRoomsFromLocalStorage() {
+    const products = JSON.parse(localStorage.getItem('rooms'));
+    return products ? products : [];
 }
-var rooms=getRoomsFromLocalStorage()
-var room=rooms.find(roo => roo.id==id)
-console.log(rooms)
-console.log(room)
-document.getElementById('room-image').getElementsByTagName('img')[0].src=room.image;
-document.getElementById('typeRoom').innerHTML=room.type;
-document.getElementById('nameRoom').innerHTML=room.name;
-document.getElementById('typeBed').innerHTML=room.bedType;
-document.getElementById('room-price').innerHTML=room.price;
-const amenitiesString =room.amenities;
-const amenitiesArray=amenitiesString.split('+')
-var roomAmenities=document.getElementById('room-amenities');
-amenitiesArray.forEach(amenity=>{
-    roomAmenities.innerHTML+=`
-    <li class="amenity">${amenity}</li>
-    `
-})
-function returnn(){
-    history.back()
+
+// Lấy danh sách phòng
+var rooms = getRoomsFromLocalStorage();
+// Tìm phòng theo ID
+var room = rooms.find(roo => roo.id == id);
+console.log(rooms);
+console.log(room);
+
+// Hiển thị thông tin phòng lên HTML
+if (room) {
+    document.getElementById('room-image').getElementsByTagName('img')[0].src = room.image;
+    document.getElementById('typeRoom').innerHTML = room.type;
+    document.getElementById('nameRoom').innerHTML = room.name;
+    document.getElementById('typeBed').innerHTML = room.bedType;
+    document.getElementById('room-price').innerHTML = room.price + ' VND';
+    document.getElementById('roomarea').innerHTML = room.area; // Diện tích
+    document.getElementById('roomview').innerHTML = room.view; // Tầm nhìn
+    
+    // Xử lý tiện nghi
+    const amenitiesString = room.amenities;
+    const amenitiesArray = amenitiesString.split('+');
+    var roomAmenities = document.getElementById('amenities-text');
+    amenitiesArray.forEach(amenity => {
+        roomAmenities.innerHTML += `<li class="amenity">${amenity}</li>`;
+    });
+} else {
+    console.log('Phòng không tồn tại.');
 }
+
+// Hàm quay lại
+function returnn() {
+    history.back();
+}
+
 
 
 /*fetch(`http://localhost:3000/rooms?id=${id}`)

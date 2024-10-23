@@ -37,7 +37,7 @@ var rooms=getRoomsFromLocalStorage();
 var user=""
 console.log(getQueryParam('userId'))
 if(!getQueryParam('userId')){
-    document.getElementById('history').innerHTML = "<h4>Bạn chua đăng nhập</h4>"
+    document.getElementById('history').innerHTML = "<h4>Bạn chưa đăng nhập</h4>"
 }else{
     user=findUser(getQueryParam('userId'));
 }
