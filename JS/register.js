@@ -60,7 +60,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
                     password: document.getElementById('password').value,
                     history:[],
                     book:[],
-                    rule:2,
+                    rule:1,
                     };
                 // Lưu dữ liệu người dùng vào localStorage
                 users.push(user);

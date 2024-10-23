@@ -272,3 +272,36 @@ document.addEventListener('DOMContentLoaded', () => {
     loadRoomsFromLocalStorage();
     renderRooms();
 });
+////
+function getUsersFromLocalStorage(){
+    const products =JSON.parse(localStorage.getItem('users'));
+    if(!products){
+        return [];
+    }
+    else{
+        return products;
+    }
+}
+//Hàm lấy url từ đường dẫn
+function getQueryParam(param){
+    var urlParam = new URLSearchParams(window.location.search);
+    return urlParam.get(param);
+}
+//
+//Hàm tìm user với thuộc tính id từ URL
+function findUser(id){
+    const user= users.find( user => user.id === id);
+    if (user){
+        return user;
+    }else{
+        alert("Không có users")
+    }
+}
+// Xác nhận tài khoang người đang dùng
+var users= getUsersFromLocalStorage();
+var user = findUser(getQueryParam('userId'));
+function logout(){
+    const beHaft ="HTML/home.html";
+        const url = new URL (beHaft,window.location.origin);
+        window.location.href=url.toString();
+}
