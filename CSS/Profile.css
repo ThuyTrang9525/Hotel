@@ -22,7 +22,7 @@ header a:hover{
     transform: scale(1.05);
 }
 html, body{
-    background: #eaeaea;
+    background: linear-gradient(to right, #cf8517, #6d8484);
     overflow-x: hidden;
     height: 100%;
 }
@@ -39,10 +39,6 @@ html, body{
     box-sizing: border-box;
     justify-items: center;
     width: 900px;
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
 }
 
 p {
@@ -140,7 +136,7 @@ button:hover{
 }
 
 .btn:active {
-    background-color: #6fdff3; /* Màu nền khi nhấn vào */
+    background-color: #070707; /* Màu nền khi nhấn vào */
 }
 .breadcrumb {
     list-style: none; /* Xóa kiểu đánh số */

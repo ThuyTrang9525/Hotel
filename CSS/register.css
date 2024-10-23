@@ -27,7 +27,7 @@ body {
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #007bff;
+    color: #000000;
 }
 
 .breadcrumb-item a:hover {
@@ -73,6 +73,7 @@ html, body{
     background: #eaeaea;
     overflow-x: hidden;
     height: 100%;
+    background: linear-gradient(to right, #cf8517, #6d8484);
 }
 /* Css phần footer */
 .footer {
