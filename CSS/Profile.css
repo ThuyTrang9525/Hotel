@@ -105,9 +105,9 @@ select {
 }
 
 button {
-    font-size: 18px;
+    font-size: 16px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     background-color:  #003366;
 }

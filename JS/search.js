@@ -211,7 +211,7 @@ function showResultRooms(){
     add.innerHTML ="";
     //"/IMAGE/doubleBed1.webp"
     listRoom.forEach(room =>{
-        const linkdetailFake ="HTML/detailsroom.html?id="+room.id
+        const linkdetailFake ="HTML/detailsroom.html?id="+room.id+"&userId="+user.id;
         const linkDetail = new URL (linkdetailFake,window.location.origin);
         add.innerHTML+=
         `<div class="boxRoom">
@@ -224,7 +224,7 @@ function showResultRooms(){
                         <div class="roomNon"><p class="textTemplate text3"> <i class="fas fa-user-friends"></i>2 người</p></div>
                     </div>
                     <div class="boxRoomFlexNon">
-                        <div class="roomNon"><p class="textTemplate textA textColor">${room.price}</p></div>
+                        <div class="roomNon"><p class="textTemplate textA textColor">${changeMoney(room.price)}&nbsp;VNĐ</p></div>
                         <div class="roomNon"><button class="buttonChoseRoom" data-room-id="${room.id}" data-type="true">chọn</button></div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@ function showRoomInBasket(){
             <div class="containNonBook">
                 <p class="numRoomChoseBook textTemplate text3 ">Phòng ${i} ${defiRoom.name}</p>
                 <div class="boxFlex fieldButtonOfchose">
-                    <p class="priceRoomChoseBook textTemplate text3 ">Giá ${defiRoom.price} vnđ/Ngày</p>
+                    <p class="priceRoomChoseBook textTemplate text3 ">Giá ${changeMoney(defiRoom.price)}&nbsp;VNĐ/Ngày</p>
                     <button class="deleteBookRoom" onclick="buttonDeleteRoom('${room.idRoom}')">X Xóa</button>
                 </div>
             </div>
@@ -272,7 +272,7 @@ function showMoney(){
     user.book.forEach(room =>{
         total +=parseInt(room.price)
     })
-    document.getElementById('notTotolBook').innerHTML=total;
+    document.getElementById('notTotolBook').innerHTML=changeMoney(total);
 }
 //Hàm chọn phòng vào giỏ hàng
 function addEvetChoseButton(){
@@ -474,4 +474,28 @@ function changeToPay(){
     }else{
         alert("Phải chọn ít nhất một phòng");
     }
+}
+//Hàm chuyển tiền
+function changeMoney(money){
+    let resultMoney=""
+    const StringMoney= money+"";
+    const num=StringMoney.length;
+    const num1=num/3|0;
+    if((num-num1*3)>0){
+        for(let i=0;i<(num-num1*3);i++){
+            if(i==(num-num1*3-1)){
+                resultMoney+=StringMoney.charAt(i)+".";
+            }else{
+                resultMoney+=StringMoney.charAt(i);
+            }
+        }
+    }
+    for(let i =0;i<num1*3;i++){
+        if((i+1)%3==0&&i!=(num1*3-1)){
+            resultMoney+=StringMoney.charAt(i+(num-num1*3))+".";
+        }else{
+            resultMoney+=StringMoney.charAt(i+(num-num1*3));
+        }
+    }
+    return resultMoney
 }
