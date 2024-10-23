@@ -1,17 +1,15 @@
-body {
-    font-family: sans-serif;
-    background: #eaeaea;
-    overflow-x: hidden;
-    height: 100%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: black;
+    background-color: black; 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
