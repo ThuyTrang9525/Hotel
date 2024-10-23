@@ -211,7 +211,7 @@ function showResultRooms(){
     add.innerHTML ="";
     //"/IMAGE/doubleBed1.webp"
     listRoom.forEach(room =>{
-        const linkdetailFake ="HTML/detailsroom.html?id="+room.id
+        const linkdetailFake ="HTML/detailsroom.html?id="+room.id+"&userId="+user.id;
         const linkDetail = new URL (linkdetailFake,window.location.origin);
         add.innerHTML+=
         `<div class="boxRoom">
