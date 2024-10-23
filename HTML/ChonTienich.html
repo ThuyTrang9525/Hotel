@@ -31,8 +31,11 @@
         <a id="c-register" href="/HTML/register.html" class="me-4 text-decoration-none d-flex align-items-center">
           <i class="fa fa-registered me-2" style="font-size:24px"></i>
           Đăng kí</a>
+          <a id="c-service" href="/HTML/ChonTienich.html" class="me-4 text-decoration-none d-flex align-items-center">
+            <i class="fa fa-concierge-bell me-2"style="font-size:24px"></i>
+            Dịch vụ</a>
         <div id="c-profile" class="d-flex align-items-center me-4">
-          <i class="bi bi-person me-2" style="font-size: 24px;color: #141414;"></i>
+          <i class="bi bi-person me-2" style="font-size: 24px;color: #fff;"></i>
           <a href="/HTML/Profile.html" class="aHref text-decoration-none">Tài khoản</a>
         </div>
         <a href="/HTML/History.html" class="aHref d-flex align-items-center text-decoration-none">
@@ -371,98 +374,146 @@
   </div>
    -->
   <!-- Footer -->
-  <footer class="container-fluid p-0">
-    <!-- Phần footer đầu tiên -->
-    <div
-      class="bg-secondary text-white p-2 d-flex justify-content-between align-items-center">
-      <div class="ms-5">
-        <img
-          src="/IMAGE/Logo.png"
-          class="img-fluid"
-          alt="logo"
-          style="height: 50px"
-        />
-      </div>
-      <div class="col-md-3">
-        <a href="#" class="me-3"
-          ><i class="fa-brands fa-pinterest fa-lg" style="color: black"></i
-        ></a>
-        <a
-          href="https://www.facebook.com/binhnolove05?mibextid=LQQJ4d"
-          class="me-3"
-          ><i class="bi bi-facebook"  style="color: black"></i
-        ></a>
-        <a href="#" class="me-3"
-          ><i class="fa-brands fa-instagram fa-lg" style="color: black"></i
-        ></a>
-        <a href="#" class="me-3"
-          ><i class="fa-brands fa-youtube fa-lg" style="color: black"></i
-        ></a>
-        <a href="#" class="me-3"
-          ><i class="fa fa-comment fa-lg" style="color: black"></i
-        ></a>
-      </div>
+  <div class="footer">
+    <div class="subscribe">
+      <h2>
+        Đăng ký nhận bản tin
+      </h2>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <input id="email" placeholder="Địa chỉ Email của bạn" type="email"/>
+      <button onclick="subscribe()">
+        Đăng ký
+        <i class="fas fa-arrow-right">
+        </i>
+      </button>
+      <div class="message" id="message"></div>
     </div>
-
-    <!-- Phần footer thứ hai với 3 cột ul -->
-    <div class="container-fluid bg-dark text-white">
-      <div class="row p-5">
-        <div class="col-md-8 col-sm-12">
-          <img src="/IMAGE/Logo.png" alt="" style="height: 50px" />
-          <p class="pt-5">ECORIK DANANG</p>
-          <address>
-            101B, Lê Hữu Trác, Sơn Trà, Đà Nẵng, Khách sạn ECORIK Đà Nẵng 
-          </address>
-          <p><strong>Phone: </strong> +84-76-253-026</p>
-        </div>
-
-        <div class="col-md-4 col-sm-12">
-          <div class="row">
-            <!-- Cột 1 -->
-            <div class="col-md-3 col-sm-12">
-              <ul class="list-unstyled">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
-                <li><a href="#">Item 5</a></li>
-              </ul>
-            </div>
-            <!-- Cột 2 -->
-            <div class="col-md-3 col-sm-12">
-              <ul class="list-unstyled">
-                <li><a href="#">Item 6</a></li>
-                <li><a href="#">Item 7</a></li>
-                <li><a href="#">Item 8</a></li>
-                <li><a href="#">Item 9</a></li>
-              </ul>
-            </div>
-            <!-- Cột 3 -->
-            <div class="col-md-3 col-sm-12">
-              <ul class="list-unstyled">
-                <li><a href="#">Item 10</a></li>
-                <li><a href="#">Item 11</a></li>
-                <li><a href="#">Item 12</a></li>
-              </ul>
-            </div>
-          </div>
+    <hr style="border-color: #333;"/>
+    <div class="container">
+      <div class="column about">
+        <img alt="Logo công ty" height="50" src="/IMAGE/Logo.png" width="50"/>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <div class="social">
+          <a href="#">
+            <i class="fab fa-twitter">
+            </i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook-f">
+            </i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram">
+            </i>
+          </a>
+          <a href="#">
+            <i class="fab fa-youtube">
+            </i>
+          </a>
         </div>
       </div>
-    </div>
-
-    <!-- Phần footer cuối cùng -->
-    <div class="bg-dark text-white">
-      <div class="container-fluid border-top">
-        <div class="text-start py-4">
-          <ul class="list-unstyled d-flex justify-content-start mb-0">
-            <li class="ms-5"><a href="#">Chính sách bảo mật</a></li>
-            <li><a href="#">Điều khoản sử dụng</a></li>
-            <li><a href="#">Quản lý cookie</a></li>
-          </ul>
-        </div>
+      <div class="column links">
+        <h3>
+          Liên kết nhanh
+        </h3>
+        <ul>
+          <li>
+            <a href="#">
+              Dữ liệu lớn
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Sức khỏe
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Thư viện Spa
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Đặt chỗ
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Câu hỏi thường gặp
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Liên hệ
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="column services">
+        <h3>
+          Dịch vụ
+        </h3>
+        <ul>
+          <li>
+            <a href="#">
+              Nhà hàng
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Hồ bơi
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Wellness & Spa
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Phòng hội nghị
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Sự kiện
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Phòng cho người lớn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="column contact">
+        <h3>
+          Dịch vụ
+        </h3>
+        <ul>
+          <li>
+            <i class="fas fa-map-marker-alt">
+            </i>
+            <span>Địa chỉ:</span> 205 Fida Walinton, Tongo Street Front, Hoa Kỳ
+          </li>
+          <li>
+            <i class="fas fa-phone-alt">
+            </i>
+            <span>Điện thoại:</span> +123 456 7898
+          </li>
+          <li>
+            <i class="fas fa-envelope">
+            </i>
+            <span>Email:</span> hello@ecorik.com
+          </li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
 <script src="/JS/ChonTienich.js"></script>
 </body>
 </html>
