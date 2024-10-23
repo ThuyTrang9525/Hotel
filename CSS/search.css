@@ -11,18 +11,24 @@ body{
     margin: 0px;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000; 
-    background-color: #eaeaea; 
+    background-color: black; 
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
 }
 header a{
-    color: rgb(10, 0, 0);
+    color: #eaeaea;
 }
 header a:hover{
     color: #CC8C18;
@@ -30,6 +36,8 @@ header a:hover{
 }
 html, body{
     background: #eaeaea;
+    overflow-x: hidden;
+    height: 100%;
 }
 body p{
     margin: 10px 0;
