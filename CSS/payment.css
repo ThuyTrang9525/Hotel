@@ -68,10 +68,10 @@ body{
     padding: 20px 80px;
     box-sizing: border-box;
 }
-#payForm{
+/* #payForm{
    
 
-}
+} */
 .flex-box{
    display: flex;
 }
@@ -147,7 +147,7 @@ button{
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #007bff;
+    color: black
 }
 
 .breadcrumb-item a:hover {
