@@ -66,6 +66,9 @@ html {
   margin-bottom: 100px; /* Tạo không gian cho phần nội dung mở rộng */
 }
 
+footer{
+  padding:0;
+}
 /* Css phần footer */
 .footer {
   padding: 50px 0;
@@ -200,6 +203,10 @@ html {
   margin-top: 20px;
   font-size: 14px;
   color: #d4a017;
+}
+/*fo*/
+.footer{
+  margin: 0 !important;
 }
 ul.list-unstyled {
   padding-left: 0;
