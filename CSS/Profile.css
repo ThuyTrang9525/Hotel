@@ -42,6 +42,7 @@ html, body{
 
 p {
     margin-top: 0;
+    font-size: 18px;
 }
 
 .form-container {
@@ -64,6 +65,8 @@ label {
     display: flex;
     text-align: left;
     width: 40%;
+    color: white;
+    font-size: 18px;
     margin-left: 0;
 }
 
@@ -72,20 +75,35 @@ label {
     height: 35px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 18px;
+    background: #fff; /* Màu nền mặc định */
     padding: 5px;
-    
+    font-size: 18px;
+    box-sizing: border-box;
+    transition:  0.5s ease-out;
+    background-image: linear-gradient(to right, #f6d365, #fda085);
+    background-size: 0 100%; /* Bắt đầu với nền gradient ẩn */
+    background-repeat: no-repeat;
+}
+
+.group-input input:hover {
+    transform: scale(1.05);
+    background-color: #f6d365;
 }
 
 .gender {
     display: flex;
 }
 
+
 .item-gender {
     display: flex;
     justify-content: space-between;
 }
+
+.item-gender label{
+    color: black;
+}
+
 .item-gender input {
     margin-left: 2px;
     zoom: 1.4;
@@ -99,25 +117,41 @@ select {
     font-size: 18px;
 }
 
-button {
-    font-size: 16px;
-    height: 40px;
-    border-radius: 10px;
-    color: white;
-    background-color:  #003366;
-}
-button:hover{
-    transform: scale(1.05);
-}
-
 .edit {
+    display: flex;
+    justify-content: space-around;
+    width: 320px;
     position: relative;
     left: 300px;
     top: 10px;
 }
 
+button {
+    margin-left: 10px;
+    font-size: 18px;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    color: white; /* Màu chữ ban đầu */
+    background-color: black; /* Màu nền ban đầu */
+    border: 1px solid black; /*Viền bạc*/
+    background-image: linear-gradient(to right, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-out, border-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+button:hover {
+    background-position: left bottom; /* Chuyển màu nền từ phải sang trái */
+    transform: scale(1.05); /* Tăng nhẹ kích thước */
+    border-color: silver; /* Giữ viền màu bạc */
+    color: orange; /* Đổi màu chữ khi hover (màu vàng) */
+}
+
+
+
+
 .log-out {
-    /* position: relative; */
     top: 90px;
     left: 43%;
 }
