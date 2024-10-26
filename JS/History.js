@@ -65,10 +65,8 @@ function addUserIdOnmenu(){
     return beHaft;
 }
 //
-console.log("đây")
-console.log(user.history)
 var historyCard=document.getElementById('history');
-if(user.history.length>0){
+if(user!=""&&user.history.length>0){
     user.history.forEach(element=>{
         var room=rooms.find(ro => ro.id==element.idRoom)
         historyCard.innerHTML +=`

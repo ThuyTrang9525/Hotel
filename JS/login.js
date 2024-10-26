@@ -16,7 +16,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
       if('rule' in user){
         if(user.rule==1){
           alert("Đăng nhập thành công");
-          const beHaft ="HTML/admin.html";
+          const beHaft ="HTML/admin.html?userId="+user.id;
           const url = new URL (beHaft,window.location.origin);
           window.location.href=url.toString();
         }else{

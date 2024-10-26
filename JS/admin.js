@@ -2,7 +2,6 @@ let rooms = [];
 let deleteIndex = null;
 let nextId = 1;
 let editIndex = null;
-
 // Hàm lưu dữ liệu phòng lên local storage
 function saveRoomsToLocalStorage() {
     localStorage.setItem('rooms', JSON.stringify(rooms));
@@ -15,7 +14,92 @@ function loadRoomsFromLocalStorage() {
         rooms = JSON.parse(storedRooms);
     }
 }
-
+function getUsersFromLocalStorage(){
+    const products =JSON.parse(localStorage.getItem('users'));
+    if(!products){
+        return [];
+    }
+    else{
+        return products;
+    }
+}
+//Hàm lấy url từ đường dẫn
+function getQueryParam(param){
+    var urlParam = new URLSearchParams(window.location.search);
+    return urlParam.get(param);
+}
+//
+//Hàm tìm user với thuộc tính id từ URL
+function findUser(id){
+    const user= users.find( user => user.id === id);
+    if (user){
+        return user;
+    }else{
+        alert("Không có users")
+    }
+}
+// Xác nhận tài khoang người đang dùng
+var users= getUsersFromLocalStorage();
+var user = findUser(getQueryParam('userId'));
+//Hàm đẩy các user vào bẳng
+function renderUsers() {
+    const userData = document.getElementById('user-data');
+    userData.innerHTML = '';
+    let listUsser=users.filter(user => user.rule!=1);
+    if (listUsser.length === 0) {
+        userData.innerHTML = '<tr><td class="no-data" colspan="9">Không có dữ liệu</td></tr>';
+    } else {
+        listUsser.forEach((user, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.id}</td>
+                <td>${user.fullname}</td>
+                <td>${user.phone}</td>
+                <td>${user.email}</td>
+                <td>${user.gender}</td>
+                <td>${user.dob}</td>
+                <td>${user.address}</td>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td>${user.rule}</td>
+                <td class="action-buttons">
+                    <i class="fas fa-cog" ></i>
+                    <i class="fas fa-trash" ></i>
+                    <i class="fas fa-check" ></i>
+                </td>
+            `;
+            userData.appendChild(row);
+        });
+    }
+}
+function renderadmin() {
+    const adminData = document.getElementById('admin-data');
+    adminData.innerHTML = '';
+    let listUsser=users.filter(user => user.rule==1);
+    if (listUsser.length === 0) {
+        adminData.innerHTML = '<tr><td class="no-data" colspan="9">Không có dữ liệu</td></tr>';
+    } else {
+        listUsser.forEach((user, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.fullname}</td>
+                <td>${user.dob}</td>
+                <td>${user.gender}</td>
+                <td>${user.address}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td class="action-buttons">
+                    <i class="fas fa-cog" ></i>
+                    <i class="fas fa-trash" ></i>
+                    <i class="fas fa-check" ></i>
+                </td>
+            `;
+            adminData.appendChild(row);
+        });
+    }
+}
 // Hàm render danh sách phòng ra bảng
 function renderRooms() {
     const roomData = document.getElementById('room-data');
@@ -271,4 +355,12 @@ function logout() {
 document.addEventListener('DOMContentLoaded', () => {
     loadRoomsFromLocalStorage();
     renderRooms();
+    renderUsers();
+    renderadmin();
 });
+////
+function logout(){
+    const beHaft ="HTML/home.html";
+        const url = new URL (beHaft,window.location.origin);
+        window.location.href=url.toString();
+}

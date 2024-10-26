@@ -453,7 +453,7 @@ function tachThoiGian(a,b){
     let time2 = new Date(b);
     var timeAf=""
     const date = Math.ceil((time2 - time1) / (1000 * 60 * 60 * 24));
-    for(let i=0;i<=(date);i++){
+    for(let i=0;i<(date);i++){
         timeAf=time1.toISOString().split('T')[0];
         listTime.push(timeAf);
         time1.setDate(time1.getDate() +1 );
