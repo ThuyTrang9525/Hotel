@@ -62,15 +62,145 @@ html {
 }
 
 .content {
-  flex-grow: 1; /* Tạo không gian cho phần nội dung mở rộng */
+  flex-grow: 1;
+  margin-bottom: 100px; /* Tạo không gian cho phần nội dung mở rộng */
 }
 
-footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
+/* Css phần footer */
+.footer {
+  padding: 50px 0;
+  background-color: #000;
 }
-
+.footer .f-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer .f-container > div {
+  flex: 1;
+  margin: 20px;
+}
+.footer .subscribe {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.footer .subscribe h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.footer .subscribe p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #bbb;
+}
+.footer .subscribe input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  width: 250px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.footer .subscribe button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #d4a017;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.footer .subscribe button i {
+  margin-left: 5px;
+}
+.footer .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.footer .about img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+.footer .about p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #bbb;
+  margin-top: 0;
+}
+.footer .links, .footer .services, .footer .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.footer .links ul, .footer .services ul, .footer .contact ul {
+  list-style: none;
+  padding: 0;
+}
+.footer .links ul li, .footer .services ul li, .footer .contact ul li {
+  margin-bottom: 10px;
+}
+.footer .links ul li a, .footer .services ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.footer .links ul li a:hover, .footer .services ul li a:hover {
+  color: #d4a017;
+}
+.footer .links ul li a:before, .footer .services ul li a:before {
+  content: "\00BB \0020";
+  color: #d4a017;
+}
+.footer .contact ul li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #bbb;
+}
+.footer .contact ul li i {
+  margin-right: 10px;
+  color: #d4a017;
+}
+.footer .contact ul li span {
+  font-weight: bold;
+  color: #fff;
+  display: block;
+}
+.footer .social {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.footer .social a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .social a:hover {
+  color: #d4a017;
+}
+.footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer .message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #d4a017;
+}
 ul.list-unstyled {
   padding-left: 0;
 }

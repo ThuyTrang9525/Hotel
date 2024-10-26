@@ -1,0 +1,273 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-section, .right-section {
+    width: 48%;
+}
+
+.left-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.right-section {
+    padding: 10px;
+}
+
+.right-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.right-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.feedback-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.feedback-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 20px;
+    position: relative;
+}
+
+.feedback-slider div {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.feedback-slider .prev {
+    left: 10px;
+}
+
+.feedback-slider .next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .right-section h1 {
+        font-size: 24px;
+    }
+
+    .right-section p {
+        font-size: 14px;
+    }
+}
+#carouselExampleCaptions {
+    width: 100%; /* Điều chỉnh chiều rộng tối đa */
+    height: 100%;
+    margin: auto; /* Đưa carousel vào giữa trang */
+}
+
+.carousel-item img {
+    width: 700px; /* Giữ tỷ lệ hình ảnh */
+    height: 700px;
+}
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    background-color: black; 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+header a:hover{
+    color: #CC8C18;
+    transform: scale(1.05);
+}
+html, body{
+    background: #eaeaea;
+    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(to right, #cf8517, #6d8484);
+}
+header .container-fluid .d-flex.align-items-center {
+    gap: 20px; /* Adjust this value as needed for even spacing */
+}
+
+header a {
+    color: #eaeaea; 
+    padding: 8px 12px; /* Add padding for consistent spacing around each link */
+}
+
+/* Css phần footer */
+.footer {
+    padding: 50px 0;
+    background-color: #000;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer .container > div {
+    flex: 1;
+    margin: 20px;
+}
+.footer .subscribe {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.footer .subscribe h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.footer .subscribe p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+.footer .subscribe input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    width: 250px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.footer .subscribe button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #d4a017;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+.footer .subscribe button i {
+    margin-left: 5px;
+}
+.footer .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.footer .about img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+.footer .about p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #bbb;
+    margin-top: 0;
+}
+.footer .links, .footer .services, .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.footer .links ul, .footer .services ul, .footer .contact ul {
+    list-style: none;
+    padding: 0;
+}
+.footer .links ul li, .footer .services ul li, .footer .contact ul li {
+    margin-bottom: 10px;
+}
+.footer .links ul li a, .footer .services ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+.footer .links ul li a:hover, .footer .services ul li a:hover {
+    color: #d4a017;
+}
+.footer .links ul li a:before, .footer .services ul li a:before {
+    content: "\00BB \0020";
+    color: #d4a017;
+}
+.footer .contact ul li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #bbb;
+}
+.footer .contact ul li i {
+    margin-right: 10px;
+    color: #d4a017;
+}
+.footer .contact ul li span {
+    font-weight: bold;
+    color: #fff;
+    display: block;
+}
+.footer .social {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+.footer .social a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .social a:hover {
+    color: #d4a017;
+}
+.footer .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer .message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #d4a017;
+}
+
