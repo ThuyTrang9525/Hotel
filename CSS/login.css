@@ -14,9 +14,11 @@ body {
     max-width: 500px;
 }
 .btn:hover {
-    background-color: #73aee9; /* Màu nền khi hover */
+    background-color: #CC8C18; /* Màu nền khi hover */
 }
-
+.text-center{
+    margin: 10px;
+}
 .btn:active {
     background-color: #000000; /* Màu nền khi nhấn vào */
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/forgotPass.css">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-placeholder"></div>
+            <h2>LOG IN</h2>
+            <form action="login.html" method="POST">
+                <div class="input-group">
+                    <label for="username">
+                        <span class="icon">👤</span>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="password">
+                        <span class="icon">🔒</span>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </label>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Bắt sự kiện khi người dùng nhấn nút "Login"
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của form để tự xử lý
+        
+            // Lấy giá trị của username và password từ form
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+        
+            // Kiểm tra thông tin đăng nhập (ví dụ tạm thời)
+            if (username === "testUser" && password === "newPassword") {
+                // Cập nhật mật khẩu vào Local Storage
+                localStorage.setItem("password", password);
+                
+                // Chuyển hướng về trang đăng nhập
+                window.location.href = "/HTML/login.html";
+            } else {
+                alert("Sai tên đăng nhập hoặc mật khẩu.");
+            }
+        });
+    </script>
+        
+</body>
+</html>
