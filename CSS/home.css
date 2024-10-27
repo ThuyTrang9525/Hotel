@@ -251,15 +251,17 @@ select {
 button.small {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
 }
 
 button.small:hover {
     background-color: #0056b3;
+    transform: scale(1.02);
 }
 
 .close {
