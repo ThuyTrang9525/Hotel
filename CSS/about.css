@@ -1,57 +1,112 @@
+
 body {
-    min-height: 100vh;
-}
-.form-section, .logo-section {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo-section img {
-    max-width: 100%;
-}
-.form-container {
-    max-width: 500px;
-}
-.btn:hover {
-    background-color: #d79f04; /* Màu nền khi hover */
-}
-
-.btn:active {
-    background-color: #000000; /* Màu nền khi nhấn vào */
-}
-.breadcrumb {
-    background-color: transparent;
-    font-size: 16px;
-}
-
-.breadcrumb-item a {
-    text-decoration: none;
-    color: #f4f4f4;
-}
-
-.breadcrumb-item a:hover {
-    text-decoration: underline;
-}
-
-
-header {
-    position: sticky; /* Giữ header ở trên cùng khi cuộn */
-    top: 0;
-    width: 100%;
-    z-index: 1000; 
-    background-color: black; 
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Thêm margin dưới header */
-}
-
-*{
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-section, .right-section {
+    width: 48%;
+}
+
+.left-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.right-section {
+    padding: 10px;
+}
+
+.right-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.right-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.feedback-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.feedback-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 20px;
+    position: relative;
+}
+
+.feedback-slider div {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.feedback-slider .prev {
+    left: 10px;
+}
+
+.feedback-slider .next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .right-section h1 {
+        font-size: 24px;
+    }
+
+    .right-section p {
+        font-size: 14px;
+    }
+}
+#carouselExampleCaptions {
+    width: 100%; /* Điều chỉnh chiều rộng tối đa */
+    height: 100%;
+    margin: auto; /* Đưa carousel vào giữa trang */
+}
+
+.carousel-item img {
+    width: 700px; /* Giữ tỷ lệ hình ảnh */
+    height: 700px;
+}
 header {
     position: sticky;
     top: 0;
@@ -62,9 +117,6 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0;
 }
-header a{
-    color: #eaeaea;
-}
 header a:hover{
     color: #CC8C18;
     transform: scale(1.05);
@@ -74,11 +126,18 @@ html, body{
     overflow-x: hidden;
     height: 100%;
     background: linear-gradient(to right, #cf8517, #6d8484);
-    background: linear-gradient(to right, #cf8517, #6d8484);
 }
+header .container-fluid .d-flex.align-items-center {
+    gap: 20px; /* Adjust this value as needed for even spacing */
+}
+
+header a {
+    color: #eaeaea; 
+    padding: 8px 12px; /* Add padding for consistent spacing around each link */
+}
+
 /* Css phần footer */
 .footer {
-    margin-top: 20px;
     padding: 50px 0;
     background-color: #000;
 }
@@ -212,3 +271,4 @@ html, body{
     font-size: 14px;
     color: #d4a017;
 }
+

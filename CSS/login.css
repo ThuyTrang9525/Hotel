@@ -14,11 +14,13 @@ body {
     max-width: 500px;
 }
 .btn:hover {
-    background-color: #73aee9; /* Màu nền khi hover */
+    background-color: #CC8C18; /* Màu nền khi hover */
 }
-
+.text-center{
+    margin: 10px;
+}
 .btn:active {
-    background-color: #6fdff3; /* Màu nền khi nhấn vào */
+    background-color: #000000; /* Màu nền khi nhấn vào */
 }
 .breadcrumb {
     background-color: transparent;
@@ -27,7 +29,7 @@ body {
 
 .breadcrumb-item a {
     text-decoration: none;
-    color: #007bff;
+    color: #000000;
 }
 
 .breadcrumb-item a:hover {
@@ -62,6 +64,7 @@ html, body{
     background: #eaeaea;
     overflow-x: hidden;
     height: 100%;
+    background: linear-gradient(to right, #cf8517, #6d8484);
 }
 
 /* Css phần footer */

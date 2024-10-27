@@ -23,8 +23,12 @@ for (let i = 1950; i <= currentYear; i++) {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = i;
+    if (i === currentYear) {
+        option.selected = true; // Đặt năm hiện tại là tùy chọn mặc định
+    }
     yearSelect.appendChild(option);
 }
+
 // Hàm khi bấm vào nút "Chỉnh sửa"
 function enableEdit() {
     // Hiển thị nút "Lưu Thông Tin"
@@ -160,7 +164,7 @@ function saveUserInfo(){
         }
     })
     localStorage.setItem('users',JSON.stringify(users));
-    //ẩn nút xác nhận thay đổi lên và khhoong cho phép ngươi dùng chỉnh sửa
+    //ẩn nút xác nhận thay đổi lên và không cho phép ngươi dùng chỉnh sửa
     buttonSave.style.display="none";
     showInforUser()
 }
