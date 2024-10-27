@@ -44,7 +44,8 @@ body{
 
 .paraResultBook{
     flex: 1;
-    margin: 10px 0
+    margin: 10px 0;
+    border-bottom: 1px solid gray;
 }
 .paraResultServicePrice{
     position: absolute;
@@ -95,6 +96,7 @@ body{
     flex: 1;
     height: 23px;
     border: none;
+    border-bottom: 1px solid gray;
 }
 .boxServiceNon{
     display: flex;

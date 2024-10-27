@@ -9,7 +9,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000; 
-  background-color: black; 
+  background-color: #050505; 
   backdrop-filter: blur(10px); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 0;
@@ -66,6 +66,9 @@ html {
   margin-bottom: 100px; /* Tạo không gian cho phần nội dung mở rộng */
 }
 
+footer{
+  padding:0;
+}
 /* Css phần footer */
 .footer {
   padding: 50px 0;
@@ -200,6 +203,10 @@ html {
   margin-top: 20px;
   font-size: 14px;
   color: #d4a017;
+}
+/*fo*/
+.footer{
+  margin: 0 !important;
 }
 ul.list-unstyled {
   padding-left: 0;
