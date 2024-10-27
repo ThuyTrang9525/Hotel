@@ -58,7 +58,7 @@ select {
 button {
     width: 100%; /* Chiều rộng nút bằng 100% của cột */
     padding: 10px;
-    background-color: #007bff;
+    background-color:black;
     color: white;
     border: none;
     border-radius: 5px;
@@ -72,4 +72,5 @@ button.small {
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.02);
 }
