@@ -111,9 +111,11 @@ button:hover{
 }
 
 .edit {
-    position: relative;
-    left: 300px;
-    top: 10px;
+    display: flex;
+    justify-content: end;
+    column-gap: 12px;
+    align-items: end;
+    margin-top: 12px;
 }
 
 .log-out {

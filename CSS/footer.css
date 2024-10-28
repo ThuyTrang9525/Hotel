@@ -18,14 +18,14 @@
         color: white;
     }
     .site-footer.col-md-3.col-sm-12 {
-        position: relative; /* Đảm bảo đường viền được hiển thị chính xác */
+        position: relative;
         text-align: center;
         height: 180px;
     }
 
     .site-footer .col-md-3.col-sm-12:not(:first-child) {
         border-left: 1px solid rgba(255, 255, 255, 0.8);
-        padding-left: 15px; /* Thêm padding để tạo khoảng cách giữa nội dung và đường viền */
+        padding-left: 15px; 
     }
 
     @media (max-width: 576px) {

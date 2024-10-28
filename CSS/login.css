@@ -66,11 +66,18 @@ html, body{
 }
 
 /* Css phần footer */
+
+.footer .subscribe h2, .f-container .links h3, .services h3, .contact h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color:#fff
+}
 .footer {
     padding: 50px 0;
     background-color: #000;
 }
-.footer .container {
+.footer .f-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -78,7 +85,7 @@ html, body{
     margin: 0 auto;
     padding: 0 20px;
 }
-.footer .container > div {
+.footer .f-container > div {
     flex: 1;
     margin: 20px;
 }
@@ -199,4 +206,7 @@ html, body{
     margin-top: 20px;
     font-size: 14px;
     color: #d4a017;
+}
+.text-center{
+    margin: 10px;
 }
