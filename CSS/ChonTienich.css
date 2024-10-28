@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui;
 }
 
 header {
@@ -33,16 +34,30 @@ html, body{
     font-size: 16px;
 }
 
+
 .breadcrumb-item a {
     text-decoration: none;
-    color: #0d6af6;
+    color:#CC8C18;
 }
+
 
 .breadcrumb-item a:hover {
     text-decoration: underline;
 }
+.col-auto {
+    flex: 0 0 auto;
+    margin-left: 80px;
+    color: #CC8C18;
+}
+.form-check-input:checked{
+    background-color: #CC8C18;
+}
 button{
     border-radius: 5px;
+    padding:3px;
+    margin-right: 80px;
+    background-color: #CC8C18;
+    color: #eaeaea;
 }
 
 .container-ct {
