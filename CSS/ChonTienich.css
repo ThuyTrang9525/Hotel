@@ -17,6 +17,7 @@ header {
 }
 header a{
     color: #eaeaea;
+    font-size: 20px;
 }
 header a:hover{
     color: #CC8C18;
