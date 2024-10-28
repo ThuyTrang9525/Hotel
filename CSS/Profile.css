@@ -121,13 +121,12 @@ select {
 
 .edit {
     display: flex;
-    width: 320px;
+    width: 350px;
     position: relative;
-    left: 300px;
+    left: 290px;
     top: 10px;
-    justify-content: end;
+    justify-content: center;
     column-gap: 12px;
-    align-items: end;
     margin-top: 12px;
 }
 
@@ -149,7 +148,7 @@ button {
 button:hover {
     background-position: left bottom; /* Chuyển màu nền từ phải sang trái */
     transform: scale(1.05); /* Tăng nhẹ kích thước */
-    border-color: silver; /* Giữ viền màu bạc */
+    border: 2px solid silver; /* Giữ viền màu bạc */
     color: orange; /* Đổi màu chữ khi hover (màu vàng) */
 }
 
