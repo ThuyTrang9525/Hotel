@@ -167,6 +167,17 @@ header a {
     margin-bottom: 20px;
     color: #bbb;
 }
+.footer .subscribe h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+h3 {
+    font-size: 1.75rem;
+    color: white;
+    font-weight: bold;
+}
 .footer .subscribe input[type="email"] {
     padding: 10px;
     border: none;
