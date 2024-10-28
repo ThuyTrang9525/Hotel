@@ -125,12 +125,20 @@ h5 {
     }
 }
 
+
 /* Css phần footer */
+
+.footer .subscribe h2, .f-container .links h3, .services h3, .contact h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color:#fff
+}
 .footer {
     padding: 50px 0;
     background-color: #000;
 }
-.footer .container {
+.footer .f-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -138,7 +146,7 @@ h5 {
     margin: 0 auto;
     padding: 0 20px;
 }
-.footer .container > div {
+.footer .f-container > div {
     flex: 1;
     margin: 20px;
 }

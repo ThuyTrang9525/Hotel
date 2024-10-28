@@ -236,18 +236,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //footer 
-    function subscribe() {
-        var email = document.getElementById('email').value;
-        var message = document.getElementById('message');
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailPattern.test(email)) {
-            message.textContent = 'Thank you for subscribing with email: ' + email;
+// Initialize EmailJS
+(function(){
+    emailjs.init("EVOGG9rP9zTmompvt"); // Replace with your EmailJS user ID
+})();
+
+// Function to handle email subscription
+function subscribe() {
+    // Get the email input field value
+    var email = document.getElementById('email').value.trim();
+    
+    // Get the message element to display feedback
+    var message = document.getElementById('message');
+    
+    // Define a regular expression for basic email validation
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // Clear previous message
+    message.textContent = '';
+    message.style.color = '';
+
+    // Check if the entered email is valid
+    if (emailPattern.test(email)) {
+        // Send the email using EmailJS
+        emailjs.send("binhzd24", "template_tc1r23l", {
+            to_name: "Người nhận", // Replace with the actual recipient name
+            from_name: email,
+            message: "Bạn đã đăng ký với email: " + email
+        })
+        .then(function(response) {
+            // Display a success message
+            message.textContent = 'Cảm ơn bạn đã đăng ký với email: ' + email;
             message.style.color = '#d4a017';
-        } else {
-            message.textContent = 'Please enter a valid email address.';
+        })
+        .catch(function(error) {
+            // Display an error message
+            message.textContent = 'Có lỗi xảy ra. Vui lòng thử lại.';
             message.style.color = 'red';
-        }
+            console.error("Error sending email:", error); // Log error for debugging
+        });
+    } else {
+        // Display an error message for invalid email
+        message.textContent = 'Vui lòng nhập địa chỉ email hợp lệ.';
+        message.style.color = 'red';
     }
+}
+
+
+
+
 // Map
 function openDirections() {
     window.open('https://www.google.com/maps/dir/?api=1&destination=16.061473787794288,108.2402975694859', '_blank');
