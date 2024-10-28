@@ -5,19 +5,25 @@ const boxFilterTypeRoom = document.getElementById('boxFilterTypeRoom');
 typePrice.addEventListener('click',function(){
     if(boxFilterPrice.style.display==='none'){
         boxFilterPrice.style.display = "block"
-        typePrice.style.backgroundColor= "rgb(143, 143, 143)"
+        typePrice.style.backgroundColor= /*"rgb(143, 143, 143)*/"black";
+        typePrice.style.borderRadius ="5px";
+        typePrice.style.color="white";
     }else {
         boxFilterPrice.style.display = "none";
-        typePrice.style.backgroundColor= ""
+        typePrice.style.backgroundColor= "";
+        typePrice.style.color="black";
     }
 })
 typeRoom.addEventListener('click',function(){
     if(boxFilterTypeRoom.style.display==='none'){
         boxFilterTypeRoom.style.display = "block"
-        typeRoom.style.backgroundColor= "rgb(143, 143, 143)"
+        typeRoom.style.backgroundColor= /*"rgb(143, 143, 143)*/"black";
+        typeRoom.style.borderRadius ="5px";
+        typeRoom.style.color="white";
     }else {
         boxFilterTypeRoom.style.display = "none";
         typeRoom.style.backgroundColor= ""
+        typeRoom.style.color="black";
     }
 })
 /*var users =[
@@ -247,7 +253,7 @@ function showRoomInBasket(){
                 <p class="numRoomChoseBook textTemplate text3 ">Phòng ${i} ${defiRoom.name}</p>
                 <div class="boxFlex fieldButtonOfchose">
                     <p class="priceRoomChoseBook textTemplate text3 ">Giá ${changeMoney(defiRoom.price)}&nbsp;VNĐ/Ngày</p>
-                    <button class="deleteBookRoom" onclick="buttonDeleteRoom('${room.idRoom}')">X Xóa</button>
+                    <button class="deleteBookRoom" onclick="buttonDeleteRoom('${room.idRoom}')">Xóa</button>
                 </div>
             </div>
         `
