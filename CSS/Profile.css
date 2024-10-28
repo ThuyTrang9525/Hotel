@@ -121,11 +121,14 @@ select {
 
 .edit {
     display: flex;
-    justify-content: space-around;
     width: 320px;
     position: relative;
     left: 300px;
     top: 10px;
+    justify-content: end;
+    column-gap: 12px;
+    align-items: end;
+    margin-top: 12px;
 }
 
 button {
