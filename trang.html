@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hình con giun</title>
+    <style>
+        .worm-container {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            /* Sử dụng flex hoặc grid nếu muốn tạo đường cong */
+        }
+
+        .segment {
+            width: 30px;
+            height: 30px;
+            background-color: #6c6;
+            border-radius: 50%;
+            /* tạo hiệu ứng bóng để tăng cảm giác 3D */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-    <script>
-        localStorage.setItem('users',JSON.stringify([]))
-        console.log("kkk")
-    </script>
+    <div class="worm-container">
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <!-- Thêm nhiều phần tử div.segment để kéo dài con giun -->
+    </div>
 </body>
-</html>l
+</html>
