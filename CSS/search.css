@@ -10,12 +10,15 @@ body{
     padding: 0;
     margin: 0px;
 }
-@media only screen and (min-width: 1370px) and (max-width: 1560px) {
+@media only screen and (min-width: 1400px) and (max-width: 1560px) {
     .framSearch{
         width: 100% !important;
     }
     .image{
         height: 180px !important;
+    }
+    .boxStatusBookRoom{
+        width: 320px !important;
     }
   }
 @media only screen and (min-width: 1640px) and (max-width: 1800px) {
@@ -24,6 +27,9 @@ body{
     }
     .image{
         height: 220px !important;
+    }
+    .boxStatusBookRoom{
+        width: 350px !important;
     }
 }
 *{
@@ -50,7 +56,6 @@ header a:hover{
 }
 html, body{
     background: #eaeaea;
-    overflow-x: hidden;
 }
 body p{
     margin: 10px 0;
@@ -114,7 +119,7 @@ body p{
     max-height: max-content;
     background-color: inherit;
     position: sticky;
-    top:150px;
+    top:150px ;
     margin: 0 20px;
     padding-bottom: 10px;
     box-shadow:0.5px 0.5px 2px 2.5px rgba(1, 1, 1, 0.2);

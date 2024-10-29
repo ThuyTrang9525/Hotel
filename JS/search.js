@@ -166,7 +166,7 @@ function addUserIdOnmenu(){
 }
 //
 console.log(user)
-// xác nhận ngày dến và ngày đi(chưa hoàn thành)
+// xác nhận ngày dến và ngày đi( hoàn thành)
 var startDay1=""
 var endDay1=""
 if(user.book.length>0){
@@ -280,7 +280,7 @@ function showMoney(){
     })
     document.getElementById('notTotolBook').innerHTML=changeMoney(total);
 }
-//Hàm chọn phòng vào giỏ hàng
+//Hàm chọn hay bỏ chọn phòng vào giỏ hàng
 function addEvetChoseButton(){
     const buttonChoseRoom=document.querySelectorAll('.buttonChoseRoom');
     buttonChoseRoom.forEach(chose =>{
